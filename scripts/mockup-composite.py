@@ -74,11 +74,12 @@ if aspect is None:
 sw, sh = shot.size
 print('shot aspect', round(sw / sh, 3), '-> target', aspect)
 
-# Render the screenshot big so the warp has detail to sample from.
-TW = 2400
+# Scale the screenshot to the screen's size in the photo first (Lanczos), so the perspective warp
+# below works near 1:1. Bicubic warp without a prefilter aliases small UI text when it shrinks a lot.
+TW = int(round(max(wtop, wbot) * 1.02))
 TH = int(round(TW / aspect))
 shot = shot.resize((TW, TH), Image.LANCZOS)
-shot = shot.filter(ImageFilter.UnsharpMask(radius=2, percent=60, threshold=2))
+shot = shot.filter(ImageFilter.UnsharpMask(radius=1.2, percent=40, threshold=2))
 
 # Grow the quad a touch so the warped image fills under the soft mask edge.
 c = quad.mean(0)

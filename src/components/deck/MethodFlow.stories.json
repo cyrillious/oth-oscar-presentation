@@ -1,0 +1,29 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Methoden-Flowcharts",
+  "component": "./MethodFlow.tsx#MethodFlow",
+  "canvas": {
+    "layout": "centered"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "method",
+          "control": "segmented",
+          "label": "Methode",
+          "options": ["weird", "only", "competitor", "realproduct"],
+          "default": "weird"
+        },
+        {
+          "prop": "animated",
+          "control": "switch",
+          "label": "Aufbau-Animation",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

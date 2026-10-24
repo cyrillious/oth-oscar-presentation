@@ -4,6 +4,7 @@ import { AnimatePresence, animate, motion, useReducedMotion } from 'motion/react
 import { Slide } from './Slide'
 import { SURFACE } from './ui'
 import { Bund, Charm, type CharmKind } from './Bund'
+import { MethodFlow, type MethodFlowKey } from './MethodFlow'
 
 export type MSolutionProps = {
   /** Charm image on each product card. */
@@ -29,6 +30,8 @@ type Product = {
   charmAlt: string
   /** How the charm moves: each one behaves like its method (see Bund.tsx). */
   kind: CharmKind
+  /** Flowchart sketch in the lightbox that explains the method (MethodFlow.tsx). */
+  flow: MethodFlowKey
 }
 
 const PRODUCTS: Product[] = [
@@ -44,6 +47,7 @@ const PRODUCTS: Product[] = [
     ],
     card: 'Weird Or Normal?',
     kind: 'bubbles',
+    flow: 'weird',
     charm: '/images/schluesselbund/unit-01.webp',
     charmAlt: 'Motel-Schild mit Schwamm',
   },
@@ -59,6 +63,7 @@ const PRODUCTS: Product[] = [
     ],
     card: 'Only Is Better Than Best',
     kind: 'ticket',
+    flow: 'only',
     charm: '/images/schluesselbund/unit-02.webp',
     charmAlt: 'Motel-Schild mit Abo-Karte',
   },
@@ -74,6 +79,7 @@ const PRODUCTS: Product[] = [
     ],
     card: 'The True Competitor',
     kind: 'bucket',
+    flow: 'competitor',
     charm: '/images/schluesselbund/unit-03.webp',
     charmAlt: 'Motel-Schild mit Staubsauger-Düse',
   },
@@ -89,6 +95,7 @@ const PRODUCTS: Product[] = [
     ],
     card: 'The Real Product · Find the Fear',
     kind: 'shield',
+    flow: 'realproduct',
     charm: '/images/schluesselbund/unit-04.webp',
     charmAlt: 'Motel-Schild mit Modellauto',
   },
@@ -307,16 +314,16 @@ export function MSolution({ illustrations = true, columns = '2', chrome = true }
                   role="dialog"
                   aria-modal="true"
                   aria-label={active.method}
-                  className="relative grid-12 h-[740px] w-[1440px] overflow-hidden rounded-[12px] bg-paper"
+                  className="relative grid-12 grid-rows-1 h-[740px] w-[1440px] overflow-hidden rounded-[12px] bg-paper"
                   initial={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.96, y: 16 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.98, y: 8 }}
                   transition={{ duration: reduce ? 0 : 0.5, ease: EASE }}
                 >
                   <div className="col-span-6 grid min-h-0 place-items-center bg-stone p-[48px]">
-                    <Charm kind={active.kind} src={active.charm} alt={active.charmAlt} hovered className="h-[620px]" />
+                    <MethodFlow method={active.flow} />
                   </div>
-                  <div className="col-span-6 col-start-7 flex min-w-0 flex-col py-[40px] pl-4 pr-[40px]">
+                  <div className="col-span-6 col-start-7 flex min-h-0 min-w-0 flex-col overflow-y-auto overscroll-contain py-[56px] pl-[56px] pr-[104px]">
                     <p className="text-body text-mute tabular-nums">
                       Methode 0{open! + 1} · {active.method}
                     </p>

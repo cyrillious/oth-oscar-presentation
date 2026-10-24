@@ -1,0 +1,42 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "08 Skripts",
+  "component": "./MSkripts.tsx#MSkripts",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "concept",
+          "control": "segmented",
+          "label": "Skript",
+          "options": [
+            {
+              "label": "Date",
+              "value": 1
+            },
+            {
+              "label": "Spa",
+              "value": 2
+            },
+            {
+              "label": "Samichlaus",
+              "value": 3
+            }
+          ],
+          "default": 1
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

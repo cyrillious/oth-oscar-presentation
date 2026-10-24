@@ -25,10 +25,12 @@
           "control": "select",
           "label": "Figur",
           "options": [
+            "kreise",
+            "flach",
             "anatomie",
             "linie"
           ],
-          "default": "anatomie"
+          "default": "kreise"
         },
         {
           "prop": "illustration",

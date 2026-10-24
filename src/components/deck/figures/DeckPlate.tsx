@@ -11,6 +11,7 @@ export function DeckPlate({
   title,
   hint,
   readout,
+  bare = false,
   children,
 }: {
   fig: string
@@ -18,12 +19,14 @@ export function DeckPlate({
   hint?: string
   /** Resting readout, rendered on the server so it is right before hydration. */
   readout: string
+  /** Hide the four corner labels: just the figure on the panel. */
+  bare?: boolean
   children: ReactNode
 }) {
   return (
     <div className="iso deck-iso absolute inset-0" data-theme="light">
       <div className="iso-plate">
-        <div className="iso-plate-corners" aria-hidden="true">
+        <div className="iso-plate-corners" aria-hidden="true" hidden={bare}>
           <span className="iso-plate-corner" data-corner="fig">
             {fig}
           </span>
