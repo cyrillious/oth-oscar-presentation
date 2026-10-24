@@ -21,6 +21,16 @@
           "default": "TOFU"
         },
         {
+          "prop": "figur",
+          "control": "select",
+          "label": "Figur",
+          "options": [
+            "anatomie",
+            "linie"
+          ],
+          "default": "anatomie"
+        },
+        {
           "prop": "illustration",
           "control": "switch",
           "label": "Trichter-Illustration",

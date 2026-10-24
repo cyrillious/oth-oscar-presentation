@@ -18,7 +18,8 @@
             "weirding",
             "only",
             "competitor",
-            "realproduct"
+            "realproduct",
+            "funnel"
           ],
           "default": "alle"
         },

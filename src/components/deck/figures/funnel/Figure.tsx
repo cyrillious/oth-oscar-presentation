@@ -131,7 +131,7 @@ export function FigFunnel({ stage = 0, onStage }: { stage?: number; onStage?: (s
   )
 
   return (
-    <DeckPlate fig="Fig 05" title="Drei Trichter" hint="Stufe wählen ↑ ↓" readout={resting}>
+    <DeckPlate fig="Fig 05" title="Drei Trichter" hint="Trichter anklicken" readout={resting}>
       <div
         ref={stageRef}
         className="iso-stage ff"
