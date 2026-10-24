@@ -1,0 +1,36 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Anhang A2/A4/A5 Post für Post",
+  "component": "./MPosts.tsx#MPosts",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "page",
+          "control": "segmented",
+          "label": "Posts",
+          "options": ["happy", "autop-1", "autop-2"],
+          "default": "happy"
+        },
+        {
+          "prop": "post",
+          "control": "segmented",
+          "label": "Post auf dem Screen",
+          "options": ["1", "2", "3"],
+          "default": "1"
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Anatomie-Figuren",
+  "component": "./FigureSheet.tsx#FigureSheet",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "show",
+          "control": "segmented",
+          "label": "Zeigen",
+          "options": [
+            "alle",
+            "weirding",
+            "only",
+            "competitor",
+            "realproduct"
+          ],
+          "default": "alle"
+        },
+        {
+          "prop": "columns",
+          "control": "segmented",
+          "label": "Spalten",
+          "options": [
+            "1",
+            "2"
+          ],
+          "default": "2",
+          "visibleWhen": {
+            "prop": "show",
+            "equals": "alle"
+          }
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

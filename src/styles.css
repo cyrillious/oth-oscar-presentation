@@ -1,0 +1,263 @@
+@import 'tailwindcss';
+
+/* Look taken over from the oth.view website (~/.forge-projects/oth-view, src/styles.css): the pitch is by
+   oth.view, so it wears the studio's type and colours, not OSCAR's. */
+
+/* Helvena (variable, 200–900): all text, set at 400. */
+@font-face {
+  font-family: 'Helvena';
+  src: url('/fonts/Helvena-Variable.woff2') format('woff2');
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Instrument Serif (OFL): quotes and the odd statement, as on the website. */
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/InstrumentSerif-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Instrument Serif';
+  src: url('/fonts/InstrumentSerif-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Two hands for handwritten notes (HandNote on the website). */
+@font-face {
+  font-family: 'La Belle Aurore';
+  src: url('/fonts/LaBelleAurore.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Nothing You Could Do';
+  src: url('/fonts/NothingYouCouldDo.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* oth.view tokens. One accent: signal red. Hierarchy comes from size and from ink against mute,
+   never from weight. */
+@theme {
+  --font-sans: 'Helvena', ui-sans-serif, system-ui, -apple-system, Arial, sans-serif;
+  --font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
+  --font-hand: 'La Belle Aurore', 'Bradley Hand', cursive;
+  --font-hand-alt: 'Nothing You Could Do', 'La Belle Aurore', cursive;
+
+  --color-paper: #fdfdfc;
+  --color-ink: #111111;
+  --color-mute: #9b9b9a;
+  --color-hairline: #ececeb;
+  --color-stone: #f1f0ed;
+  --color-signal: #e30613;
+  /* Placeholder marker «[…]»: content to fill before the pitch. Not part of the look. */
+  --color-hint-bg: #fff2cc;
+  --color-hint: #7a5500;
+
+  --ease-frame: cubic-bezier(0.14, 0.71, 0.16, 0.99);
+
+  /* oth.view type scale, SLIDES block of the oth-view-design skill: the website's eight steps frozen
+     at their desktop end (1600px grid) for a 1600 × 900 stage. One weight (400). Each step carries its
+     own line-height and tracking: don't add leading-[…] or tracking-[…] on top. */
+  --text-display: 120px; /* title slide, chapter opener */
+  --text-display--line-height: 0.9;
+  --text-display--letter-spacing: -0.045em;
+  --text-headline: 56px; /* the one statement of a slide, key figure */
+  --text-headline--line-height: 1.05;
+  --text-headline--letter-spacing: -0.035em;
+  --text-title: 40px; /* element names, quote, list entry */
+  --text-title--line-height: 1.1;
+  --text-title--letter-spacing: -0.025em;
+  --text-intro: 28px; /* smallest size the audience is meant to read */
+  --text-intro--line-height: 1.2;
+  --text-intro--letter-spacing: -0.015em;
+  --text-prose: 20px; /* reading text on handout / appendix slides only */
+  --text-prose--line-height: 1.5;
+  --text-prose--letter-spacing: -0.005em;
+  --text-body: 16px; /* labels, legends, interface */
+  --text-body--line-height: 1.4;
+  --text-small: 14px; /* header, footer, sources, categories, chips */
+  --text-small--line-height: 1.3;
+  --text-micro: 12px; /* badges on photos */
+  --text-micro--line-height: 1.25;
+}
+
+/* Deck type scale: three sizes only, scoped to the 1600 × 900 stage. Any slide text is one of these.
+   The eight-step scale above stays for pages outside the deck (Redeplan). */
+.slide-frame {
+  --text-display: 120px; /* title slide, chapter opener */
+  --text-display--line-height: 0.9;
+  --text-display--letter-spacing: -0.045em;
+  --text-headline: 40px; /* statement, key figure, element name, quote */
+  --text-headline--line-height: 1.1;
+  --text-headline--letter-spacing: -0.025em;
+  --text-body: 20px; /* everything else: lead, labels, chrome, sources */
+  --text-body--line-height: 1.35;
+  --text-body--letter-spacing: -0.01em;
+}
+
+/* Grid of the oth.view website: 6 columns, coded as 12 half-columns, red axis between 6 and 7.
+   On a slide the frame margin is always 80px (one half-column = 120px, one column = 240px). */
+:root {
+  --pad: 20px;
+  --grid-max: 1600px;
+}
+@media (min-width: 768px) {
+  :root {
+    --pad: 40px;
+  }
+}
+@media (min-width: 880px) {
+  :root {
+    --pad: 80px;
+  }
+}
+
+@utility frame {
+  width: 100%;
+  max-width: var(--grid-max);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+  box-sizing: border-box;
+}
+
+/* 12 half-columns, no gap: column edges sit exactly on the grid lines. */
+@utility grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+/* Slide stage: 1600 × 900, 80px margin all round. Scaled to its frame with a transform (Slide.tsx). */
+@utility slide {
+  --pad: 80px;
+  position: relative;
+  width: 1600px;
+  height: 900px;
+  padding: 80px;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background-color: var(--color-hairline);
+  }
+}
+
+/* Slides are authored at 1600 × 900 and scaled to their frame (see Slide.tsx). Export 1920 × 1080 = factor 1.2. */
+.slide-inner {
+  transform: scale(var(--s, 0.5));
+}
+
+/* MStrategie: the tension curve draws itself, every stop arrives as the line reaches it (delays are set inline as --d). */
+.strat [data-p] {
+  opacity: 0;
+}
+.strat [data-draw] {
+  stroke-dasharray: 1 2;
+  stroke-dashoffset: 1.01;
+}
+.strat [data-pop] {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.strat[data-play] [data-p] {
+  animation: strat-in 0.7s var(--ease-frame) var(--d, 0s) both;
+}
+.strat[data-play] [data-draw] {
+  animation: strat-draw 3.6s linear var(--d, 0s) both;
+}
+.strat[data-play] [data-pop] {
+  animation: strat-pop 0.6s var(--ease-frame) var(--d, 0s) both;
+}
+@keyframes strat-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes strat-draw {
+  from {
+    stroke-dashoffset: 1.01;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes strat-pop {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce), print {
+  .strat [data-p],
+  .strat [data-pop] {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  .strat [data-draw] {
+    stroke-dashoffset: 0 !important;
+    animation: none !important;
+  }
+}
+
+@page {
+  size: 1600px 900px;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    background: white !important;
+  }
+  .slide-frame {
+    width: 1600px !important;
+    height: 900px !important;
+    max-width: none !important;
+    aspect-ratio: auto !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    break-after: page;
+    break-inside: avoid;
+  }
+  .slide-inner {
+    transform: none !important;
+    visibility: visible !important;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

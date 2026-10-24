@@ -1,0 +1,32 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Deck · Übersicht",
+  "component": "./DeckOverview.tsx",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "notes",
+          "control": "switch",
+          "label": "Sprechernotizen",
+          "default": true
+        },
+        {
+          "prop": "density",
+          "control": "segmented",
+          "label": "Notizspalte",
+          "options": [
+            "comfortable",
+            "compact"
+          ],
+          "default": "comfortable"
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

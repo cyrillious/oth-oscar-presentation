@@ -1,0 +1,28 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "06 So funktioniert es",
+  "component": "./S10Rhythmus.tsx",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "legend",
+          "control": "switch",
+          "label": "Legende",
+          "default": true
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

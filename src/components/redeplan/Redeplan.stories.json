@@ -1,0 +1,18 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Redeplan",
+  "component": "./Redeplan.tsx#Redeplan",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        { "prop": "showText", "control": "switch", "label": "Sprechtext", "default": true },
+        { "prop": "showSuggestions", "control": "switch", "label": "Werkstatt-Vorschläge", "default": true }
+      ]
+    }
+  ],
+  "values": {}
+}

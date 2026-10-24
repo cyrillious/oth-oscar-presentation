@@ -1,0 +1,34 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Anhang A17 Jahresplan",
+  "component": "./S09Jahresplan.tsx",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "pilot",
+          "control": "switch",
+          "label": "Pilot markieren",
+          "default": true
+        },
+        {
+          "prop": "peaks",
+          "control": "switch",
+          "label": "Abo-Peaks",
+          "default": true
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

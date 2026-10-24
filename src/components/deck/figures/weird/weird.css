@@ -1,0 +1,33 @@
+/* Fig 01 · Weirding the Normal: figure-scoped styles. */
+.fw {
+  width: 100%;
+  outline: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fw:focus-visible {
+  outline: 1px solid var(--anatomy-muted);
+  outline-offset: 8px;
+  border-radius: 12px;
+}
+
+/* The wash cabinet's mouth: a darker ground inside the tunnel. */
+.fw-cavity {
+  fill: color-mix(in srgb, var(--anatomy-mid) 30%, var(--anatomy-paper));
+  stroke: none;
+}
+
+.fw-wall {
+  fill: color-mix(in srgb, var(--anatomy-mid) 18%, var(--anatomy-paper));
+  stroke: none;
+}
+
+.fw-car-halo {
+  filter: blur(2.5px);
+  transform: translateY(1px);
+}
+
+.fw-needle {
+  stroke-width: 1.1;
+}

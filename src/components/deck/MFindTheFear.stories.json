@@ -1,0 +1,56 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "03 OSCAR heute (Benchmark)",
+  "component": "./MFindTheFear.tsx",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "aspect",
+          "control": "select",
+          "label": "Vergleichsaspekt",
+          "default": "aengste",
+          "options": [
+            {
+              "label": "Ängste beantwortet",
+              "value": "aengste"
+            },
+            {
+              "label": "Reichweite",
+              "value": "reichweite"
+            },
+            {
+              "label": "Aktivität",
+              "value": "aktivitaet"
+            },
+            {
+              "label": "Preismodell",
+              "value": "preis"
+            },
+            {
+              "label": "Standorte",
+              "value": "standorte"
+            }
+          ]
+        },
+        {
+          "prop": "oscar",
+          "control": "switch",
+          "label": "Spalte OSCAR heute",
+          "default": true
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Deck · Präsentieren",
+  "component": "./DeckPresenter.tsx",
+  "canvas": {
+    "layout": "fill"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "transitionStyle",
+          "control": "segmented",
+          "label": "Folienwechsel",
+          "options": [
+            "fade",
+            "slide"
+          ],
+          "default": "slide"
+        },
+        {
+          "prop": "notesOpen",
+          "control": "switch",
+          "label": "Notizen offen",
+          "default": false
+        },
+        {
+          "prop": "start",
+          "control": "slider",
+          "label": "Startfolie",
+          "min": 1,
+          "max": 17,
+          "step": 1,
+          "default": 1
+        }
+      ]
+    },
+    {
+      "title": "Motion",
+      "collapsible": true,
+      "controls": [
+        {
+          "prop": "transition",
+          "control": "spring",
+          "label": "Feder",
+          "default": {
+            "type": "spring",
+            "duration": 0.4,
+            "bounce": 0
+          }
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

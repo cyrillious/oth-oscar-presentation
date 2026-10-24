@@ -1,0 +1,57 @@
+/* Fig 04: strata greys, lighter at the surface, darker with depth. No new hues. */
+.fr {
+  --fr-s0: #ffffff;
+  --fr-s1: #f4f4f2;
+  --fr-s2: #ecece9;
+  --fr-s3: #e3e3e0;
+  --fr-s4: #d3d3d0;
+  --fr-s5: #c8c8c5;
+  --fr-s6: #bcbcb9;
+  --fr-bore: #a9a9a6;
+  --fr-bore-wall: #c2c2bf;
+  width: 100%;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.fr-band[data-i='0'] { fill: var(--fr-s0); }
+.fr-band[data-i='1'] { fill: var(--fr-s1); }
+.fr-band[data-i='2'] { fill: var(--fr-s2); }
+.fr-band[data-i='3'] { fill: var(--fr-s3); }
+.fr-band[data-i='4'] { fill: var(--fr-s4); }
+.fr-band[data-i='5'] { fill: var(--fr-s5); }
+.fr-band[data-i='6'] { fill: var(--fr-s6); }
+.fr-band { stroke: none; }
+
+.fr-shade { fill: #000; stroke: none; }
+
+.fr-pebble {
+  fill: #000;
+  fill-opacity: 0.07;
+  stroke: var(--anatomy-mid);
+  stroke-width: var(--anatomy-weight);
+  stroke-linejoin: round;
+}
+
+.fr-bore { fill: var(--fr-bore); stroke: none; }
+.fr-bore[data-wall] { fill: var(--fr-bore-wall); }
+
+.fr-top { fill: var(--anatomy-top); stroke: none; }
+
+.fr-glass { fill: #fff; fill-opacity: 0.22; stroke: none; }
+
+.deck-iso .fr:focus-visible {
+  outline: 1px solid var(--anatomy-muted);
+  outline-offset: 6px;
+  border-radius: 12px;
+}
+
+/* Core segments take their stratum's grey; shades step down from it. */
+.fr-core { --c: var(--fr-s0); --anatomy-paper: var(--c); --anatomy-top: var(--c); --anatomy-shade-3: color-mix(in srgb, var(--c) 96%, #000); --anatomy-shade-2: color-mix(in srgb, var(--c) 93%, #000); --anatomy-shade-1: color-mix(in srgb, var(--c) 89%, #000); --anatomy-shade-0: color-mix(in srgb, var(--c) 85%, #000); }
+.fr-core[data-i='1'] { --c: var(--fr-s1); }
+.fr-core[data-i='2'] { --c: var(--fr-s2); }
+.fr-core[data-i='3'] { --c: var(--fr-s3); }
+.fr-core[data-i='4'] { --c: var(--fr-s4); }
+.fr-core[data-i='5'] { --c: var(--fr-s5); }
+.fr-core[data-i='6'] { --c: var(--fr-s6); }

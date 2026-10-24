@@ -1,0 +1,28 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Anhang A18 Ein Dreh, fünf Kanäle",
+  "component": "./S11Kanaele.tsx",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "screenshot",
+          "control": "switch",
+          "label": "Screenshot Abo-Seite",
+          "default": true
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

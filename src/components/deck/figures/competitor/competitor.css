@@ -1,0 +1,19 @@
+.fc {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  outline: none;
+}
+
+.fc:focus-visible {
+  outline: 1px solid var(--anatomy-muted);
+  outline-offset: 8px;
+  border-radius: 12px;
+}
+
+.fc .iso-svg {
+  overflow: visible;
+}

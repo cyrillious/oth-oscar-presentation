@@ -1,0 +1,31 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Illustrationen",
+  "component": "./illustrations.tsx#IllustrationSheet",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "show",
+          "control": "select",
+          "label": "Zeigen",
+          "options": [
+            "alle",
+            "weird",
+            "only",
+            "competitor",
+            "iceberg",
+            "funnel",
+            "view"
+          ],
+          "default": "alle"
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

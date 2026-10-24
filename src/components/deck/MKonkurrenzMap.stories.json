@@ -1,0 +1,36 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Anhang A8 Positionierungsmatrix",
+  "component": "./MKonkurrenzMap.tsx#MKonkurrenzMap",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "auswahl",
+          "control": "select",
+          "label": "Anbieter gewählt",
+          "options": [
+            "keine",
+            "oscar",
+            "migrol",
+            "avia",
+            "waschman",
+            "soft"
+          ],
+          "default": "keine"
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

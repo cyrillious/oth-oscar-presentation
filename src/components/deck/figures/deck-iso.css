@@ -1,0 +1,65 @@
+/* Anatomy figures inside the stone illustration panel of the method slides.
+   Light theme only. The one lit accent is signal red; everything else stays grey. */
+@import '../../iso/iso.css';
+
+.iso.deck-iso[data-theme='light'] {
+  /* Paper = the stone panel of MethodLayout, so fills hide what is behind without patches. */
+  --anatomy-card: var(--color-stone, #f1f0ed);
+  --anatomy-paper: var(--color-stone, #f1f0ed);
+  --anatomy-face: var(--color-paper, #fdfdfc);
+  --anatomy-top: var(--color-paper, #fdfdfc);
+  --anatomy-text: color-mix(in srgb, var(--color-ink, #111) 60%, var(--color-stone, #f1f0ed));
+  --anatomy-muted: var(--color-mute, #9b9b9a);
+  --anatomy-strong: var(--color-ink, #111111);
+  /* oth.view: Helvena for all text, also the plate corners and labels in the drawing. */
+  --anatomy-mono: var(--font-sans);
+  --anatomy-lit: var(--color-signal, #e30613);
+  --anatomy-lit-top: #fff6f6;
+  --anatomy-lit-shade: #f7dfe0;
+  --anatomy-red: var(--color-signal, #e30613);
+  --anatomy-halo-opacity: 0.26;
+  /* The slide is scaled down in the overview: a touch heavier than the kit's 0.6. */
+  --anatomy-weight: 0.8px;
+}
+
+.deck-iso .iso-plate {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 48px 28px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.deck-iso .iso-plate-corners {
+  inset: 20px 24px;
+}
+
+/* Corners on the scale: text-body, no tracking, no capitals (stage px of the 1600 × 900 slide). */
+.deck-iso .iso-plate-corner,
+.deck-iso .iso-plate-corner[data-corner='title'],
+.deck-iso .iso-plate-corner[data-corner='hint'] {
+  font-size: var(--text-body, 20px);
+  line-height: var(--text-body--line-height, 1.35);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.deck-iso .iso-stage {
+  /* The panel is wider than the 600 × 500 viewBox: fit by height too, never overflow. */
+  position: absolute;
+  inset: 48px 28px;
+  outline: none;
+}
+
+.deck-iso .iso-stage > .iso-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.deck-iso .iso-stage:focus-visible {
+  outline: 1px solid var(--anatomy-muted);
+  outline-offset: 8px;
+  border-radius: 12px;
+}

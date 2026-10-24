@@ -1,0 +1,32 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Anhang A14 Content-Säulen",
+  "component": "./S06Saeulen.tsx",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "columns",
+          "control": "segmented",
+          "label": "Spalten",
+          "options": [
+            "4",
+            "2"
+          ],
+          "default": "4"
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

@@ -1,0 +1,77 @@
+{
+  "version": 2,
+  "targets": {
+    "story:src/routes/index.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
+    ],
+    "story:src/components/deck/S05Klischees.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
+    ],
+    "story:src/components/deck/S01Titel.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
+    ],
+    "story:src/components/deck/S02Ausgangslage.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
+    ],
+    "story:src/routes/praesentieren.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
+    ],
+    "story:src/routes/redeplan.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
+    ],
+    "story:src/components/deck/S08Hooks.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
+    ],
+    "story:src/components/deck/DeckOverview.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
+    ],
+    "story:src/components/deck/MStrategie.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
+    ],
+    "story:src/components/deck/illustrations.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
+    ],
+    "story:src/routes/strategie-varianten.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
+    ],
+    "story:src/routes/openness.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
+    ]
+  }
+}

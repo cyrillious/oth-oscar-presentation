@@ -1,0 +1,33 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Mockups · Unlimited (Gipfeli-Stapel)",
+  "component": "./MockupStack.tsx#MockupStack",
+  "canvas": {
+    "layout": "centered"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "start",
+          "control": "select",
+          "label": "Oberste Karte",
+          "options": [
+            { "label": "Desktop", "value": 0 },
+            { "label": "Tarif (mobil)", "value": 1 },
+            { "label": "Zahlung (mobil)", "value": 2 }
+          ],
+          "default": 0
+        },
+        {
+          "prop": "showText",
+          "control": "switch",
+          "label": "Text und Pfeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

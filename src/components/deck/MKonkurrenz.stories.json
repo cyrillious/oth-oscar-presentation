@@ -1,0 +1,36 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Anhang Konkurrenz (grosser Frame)",
+  "component": "./MKonkurrenz.tsx",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "competitor",
+          "control": "segmented",
+          "label": "Konkurrent",
+          "options": [
+            "happy",
+            "autop",
+            "migrol",
+            "avia",
+            "waschman",
+            "soft"
+          ],
+          "default": "happy"
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Instagram-Profil (Konkurrenz)",
+  "component": "./InstaProfile.tsx",
+  "canvas": {
+    "layout": "centered"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "showGrid",
+          "control": "switch",
+          "label": "Beitragsraster",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {
+    "profile": {
+      "handle": "_happy_car_wash_",
+      "name": "Happy Car Wash",
+      "avatar": "/images/konkurrenz/happy-logo.png",
+      "posts": "61",
+      "followers": "713",
+      "following": "4",
+      "bio": [
+        "Hünenberg · Root · Hochdorf · Nänikon · Kloten"
+      ],
+      "stale": "Letzter Beitrag: 17.11.2020"
+    },
+    "className": "h-[900px] w-[560px]"
+  }
+}

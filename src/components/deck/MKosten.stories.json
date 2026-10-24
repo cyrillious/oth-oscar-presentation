@@ -1,0 +1,32 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "04 Kosten des Nichtstuns",
+  "component": "./MKosten.tsx#MKosten",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "szenario",
+          "control": "select",
+          "label": "Szenario",
+          "options": [
+            "ohne",
+            "mit"
+          ],
+          "default": "ohne"
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

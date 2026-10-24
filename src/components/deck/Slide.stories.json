@@ -1,0 +1,76 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Folie · Rahmen",
+  "component": "./Slide.tsx#Slide",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "tone",
+          "control": "segmented",
+          "label": "Ton",
+          "options": [
+            "sheet",
+            "white",
+            "ink"
+          ],
+          "default": "sheet"
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        },
+        {
+          "prop": "inverse",
+          "control": "switch",
+          "label": "Weisse Schrift (auf Vollfarbe)",
+          "default": false
+        },
+        {
+          "prop": "lines",
+          "control": "switch",
+          "label": "Rasterlinien",
+          "default": true
+        },
+        {
+          "prop": "axis",
+          "control": "segmented",
+          "label": "Achse",
+          "options": [
+            "signal",
+            "ink",
+            "none"
+          ],
+          "default": "signal"
+        },
+        {
+          "prop": "titleSpan",
+          "control": "select",
+          "label": "Titelbreite (Halbspalten)",
+          "options": [
+            6,
+            7,
+            8,
+            9,
+            10,
+            12
+          ],
+          "default": 10
+        }
+      ]
+    }
+  ],
+  "values": {
+    "n": 2,
+    "kicker": "Kicker",
+    "title": "Titel als Aussage-Satz, höchstens zwei Zeilen.",
+    "lead": "Optionale Unterzeile in Grau.",
+    "source": "Pip-Karte: …"
+  }
+}

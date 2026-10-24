@@ -1,0 +1,62 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Anhang A9 The True Competitor",
+  "component": "./S03Konkurrent.tsx",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "illustration",
+          "control": "switch",
+          "label": "Illustration",
+          "default": true
+        },
+        {
+          "prop": "figur",
+          "control": "segmented",
+          "label": "Bild",
+          "options": [
+            "anatomie",
+            "linie"
+          ],
+          "default": "anatomie",
+          "visibleWhen": {
+            "prop": "illustration",
+            "equals": true
+          }
+        },
+        {
+          "prop": "side",
+          "control": "segmented",
+          "label": "Illustration",
+          "options": [
+            "left",
+            "right"
+          ],
+          "default": "left",
+          "visibleWhen": {
+            "prop": "illustration",
+            "equals": true
+          }
+        },
+        {
+          "prop": "answers",
+          "control": "switch",
+          "label": "Antworten zeigen",
+          "default": true
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

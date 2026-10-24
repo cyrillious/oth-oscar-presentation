@@ -1,0 +1,39 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "Anhang A11 Tofu Mofu Bofu",
+  "component": "./MFunnel.tsx",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "open",
+          "control": "select",
+          "label": "Offene Stufe",
+          "options": [
+            "TOFU",
+            "MOFU",
+            "BOFU"
+          ],
+          "default": "TOFU"
+        },
+        {
+          "prop": "illustration",
+          "control": "switch",
+          "label": "Trichter-Illustration",
+          "default": true
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

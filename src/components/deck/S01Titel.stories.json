@@ -1,0 +1,87 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "01 Titel",
+  "component": "./S01Titel.tsx",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "layout",
+          "control": "segmented",
+          "label": "Aufbau",
+          "options": [
+            "trail",
+            "statement",
+            "split",
+            "centered"
+          ],
+          "default": "trail"
+        },
+        {
+          "prop": "theme",
+          "control": "segmented",
+          "label": "Thema beim Start (Klick wechselt)",
+          "options": [
+            "sexy",
+            "premium",
+            "playful",
+            "feel"
+          ],
+          "default": "sexy"
+        },
+        {
+          "prop": "trailSize",
+          "control": "slider",
+          "label": "Bildhöhe (px)",
+          "min": 180,
+          "max": 460,
+          "step": 10,
+          "default": 300
+        },
+        {
+          "prop": "trailGap",
+          "control": "slider",
+          "label": "Abstand der Bilder (px)",
+          "min": 60,
+          "max": 320,
+          "step": 10,
+          "default": 150
+        },
+        {
+          "prop": "statement",
+          "control": "text",
+          "label": "Satz",
+          "default": "Autowaschen wieder sexy."
+        },
+        {
+          "prop": "card",
+          "control": "segmented",
+          "label": "Karte vorne",
+          "options": [
+            "silber",
+            "gold",
+            "black"
+          ],
+          "default": "silber"
+        },
+        {
+          "prop": "neighbours",
+          "control": "switch",
+          "label": "Nachbarkarten",
+          "default": true
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}
