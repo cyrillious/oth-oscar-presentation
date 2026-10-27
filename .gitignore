@@ -12,5 +12,3 @@ dist-ssr
 .claude
 .forge/attachments
 .env*
-public/images/mockups/16x9/*.png
-public/images/mockups/16x9/*.jpg
