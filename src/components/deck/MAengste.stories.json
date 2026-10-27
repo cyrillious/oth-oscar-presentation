@@ -1,6 +1,6 @@
 {
   "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
-  "name": "02 Das Problem: die Ängste",
+  "name": "05 Find the Fear: die Ängste",
   "component": "./MAengste.tsx#MAengste",
   "canvas": {
     "layout": "flow"

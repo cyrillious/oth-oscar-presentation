@@ -1,6 +1,6 @@
 {
   "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
-  "name": "09 Drehplan",
+  "name": "10 Drehplan",
   "component": "./MDrehplan.tsx#MDrehplan",
   "canvas": {
     "layout": "flow"

@@ -72,6 +72,12 @@
         "id": "frame-1",
         "breakpoint": "desktop"
       }
+    ],
+    "story:src/routes/mockups.stories.json": [
+      {
+        "id": "frame-1",
+        "breakpoint": "desktop"
+      }
     ]
   }
 }

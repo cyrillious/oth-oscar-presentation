@@ -1,0 +1,64 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "10 Hero Content Imagefilm",
+  "component": "./MHeroFilm.tsx#MHeroFilm",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "idee",
+          "control": "segmented",
+          "label": "Idee",
+          "options": [
+            {
+              "label": "Der Älpler",
+              "value": "aelpler"
+            },
+            {
+              "label": "Der Ursprung",
+              "value": "ursprung"
+            }
+          ],
+          "default": "aelpler"
+        },
+        {
+          "prop": "slogan",
+          "control": "segmented",
+          "label": "Slogan",
+          "options": [
+            {
+              "label": "1",
+              "value": 0
+            },
+            {
+              "label": "2",
+              "value": 1
+            },
+            {
+              "label": "3",
+              "value": 2
+            }
+          ],
+          "default": 0
+        },
+        {
+          "prop": "sketch",
+          "control": "switch",
+          "label": "Skizze",
+          "default": true
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

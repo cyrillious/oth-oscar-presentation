@@ -10,10 +10,16 @@
       "title": null,
       "controls": [
         {
-          "prop": "text",
-          "control": "text",
-          "label": "Satz",
-          "default": "Autowaschen ist\nnicht sexy."
+          "prop": "morph",
+          "control": "switch",
+          "label": "Klick wechselt zum Slogan",
+          "default": true
+        },
+        {
+          "prop": "slogan",
+          "control": "switch",
+          "label": "Slogan zeigen",
+          "default": false
         },
         {
           "prop": "chrome",

@@ -3,7 +3,7 @@ import { DeckNext, Slide } from './Slide'
 import { THEMES, TrailLayer, type TrailTheme } from './TitleTrail'
 
 export type MSloganProps = {
-  /** Cycle Sexy, Premium, Playful on click before landing on Feel. Off: the slide stays on «Feel» (closing slide). */
+  /** Cycle Premium, Playful on click before landing on Feel. Off: the slide stays on «Feel» (closing slide). */
   cycle?: boolean
   /** Height of a trail picture in stage px. */
   trailSize?: number
@@ -18,7 +18,6 @@ const theme = (key: TrailTheme['key']) => THEMES.find((t) => t.key === key) ?? T
 
 /** One stage grey per feeling, light to black and back; no colour on this slide. */
 const STAGES: Stage[] = [
-  { theme: theme('sexy'), bg: '#d9d9d9', mode: 'light' },
   { theme: theme('premium'), bg: '#111111', mode: 'dark' },
   { theme: theme('playful'), bg: '#f2f2f2', mode: 'light' },
   { theme: theme('feel'), bg: '#555555', mode: 'red' },
@@ -26,8 +25,9 @@ const STAGES: Stage[] = [
 const LAST = STAGES.length - 1
 
 /**
- * The campaign line: «Make Carwash <feeling> again.» centred in display size. A click turns the feeling
- * (Sexy, Premium, Playful), each on its own stage colour with its own pictures, and lands on «Feel» on the dark-grey stage;
+ * The campaign line: «Make Carwash <feeling> again.» centred in display size. «Sexy» is already said on the
+ * slide before (MStatement morphs into it), so this one starts at Premium. A click turns the feeling
+ * (Premium, Playful), each on its own stage colour with its own pictures, and lands on «Feel» on the dark-grey stage;
  * the click after that goes to the next slide (on the canvas it starts over). The image trail follows the cursor
  * and fades away. With `cycle` off only the dark-grey «Feel» stage shows.
  */

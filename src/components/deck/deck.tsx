@@ -2,7 +2,6 @@ import type { ComponentType } from 'react'
 import { MSlogan } from './MSlogan'
 import { MStatement } from './MStatement'
 import { MStoryboard } from './MStoryboard'
-import { MSozialeScham } from './MSozialeScham'
 import { MKonkurrenzVersagt } from './MKonkurrenzVersagt'
 import { MVideoKonzepte } from './MVideoKonzepte'
 import { MSkripts } from './MSkripts'
@@ -22,6 +21,11 @@ import { MExperts } from './MExperts'
 import { MNextSteps } from './MNextSteps'
 import { S08Hooks } from './S08Hooks'
 import { S10Rhythmus } from './S10Rhythmus'
+import { MDreiAengste } from './MDreiAengste'
+import { MHumor } from './MHumor'
+import { MHeroFilm } from './MHeroFilm'
+import { MAngebot } from './MAngebot'
+import { MVision } from './MVision'
 
 export type DeckSlide = {
   id: string
@@ -38,21 +42,21 @@ export const DECK: DeckSlide[] = [
     label: 'Autowaschen ist nicht sexy',
     Component: MStatement,
     notes:
-      'Autowaschen ist nicht sexy. Niemand freut sich auf die Waschstrasse, sie ist eine Pflicht zwischen zwei Terminen. Genau da setzen wir an.',
+      'Autowaschen ist nicht sexy. Niemand freut sich auf die Waschstrasse, sie ist eine Pflicht zwischen zwei Terminen. Genau da setzen wir an. Klick: Make Carwash Sexy again.',
   },
   {
     id: 'slogan',
     label: 'Der Slogan',
     Component: MSlogan,
     notes:
-      'Make Carwash Sexy again: Sonne, nasse Haut, Film, Waschen als Pin-up der Neunziger. Premium: rotes Blech, Schaum, Studiolicht, die Waschanlage als Kinoszene. Playful: Limonadenstand, Seifenblasen, Gartenschlauch. Pro Klick wechselt das Gefühl, mit der Maus kommen Bilder dazu. Am Ende steht Feel: Ein Waschgang ist Routine, kein Erlebnis. Wir bringen das Gefühl zurück: Vorfreude beim Einfahren, Erleichterung am Ende. Das ist die Linie für alles, was folgt.',
+      'Nach Sexy kommt Premium: rotes Blech, Schaum, Studiolicht, die Waschanlage als Kinoszene. Playful: Limonadenstand, Seifenblasen, Gartenschlauch. Pro Klick wechselt das Gefühl, mit der Maus kommen Bilder dazu. Am Ende steht Feel: Ein Waschgang ist Routine, kein Erlebnis. Wir bringen das Gefühl zurück: Vorfreude beim Einfahren, Erleichterung am Ende. Das ist die Linie für alles, was folgt.',
   },
   {
     id: 'team',
     label: 'Team',
     Component: MTeam,
     notes:
-      'Das ist oth.view: Janick als Founder und Director of Visuals, Severin als Co-Founder und Producer, Henoch als Creative Director und Timo in Administration und Assistenz. Bewusst klein, damit wir schnell sind, und breit genug, um Konzept, Foto, Film und Produktion selbst abzudecken.',
+      'Das ist oth.view: Janick als Founder und Director of Visuals, Severin als Co-Founder und Producer und Timo in Administration und Assistenz. Mit unserem Studio in Rotkreuz sind wir direkt vor Ort. Bewusst klein, damit wir schnell sind, und breit genug, um Konzept, Foto, Film und Produktion selbst abzudecken.',
   },
   {
     id: 'storyboard',
@@ -64,9 +68,23 @@ export const DECK: DeckSlide[] = [
   {
     id: 'find-the-fear',
     label: 'Find the Fear: soziale Scham',
-    Component: MSozialeScham,
+    Component: MAengste,
     notes:
-      'Dahinter steckt eine Angst. Menschen kaufen selten aus reinem Vernunftkalkül, sondern um eine Angst zu lindern, hier die Fear of Criticism. Niemand will, dass das Date, Kunden oder Kollegen in ein verkrümeltes, schmutziges Auto steigen.',
+      'Dahinter steckt eine Angst. Menschen kaufen selten aus reinem Vernunftkalkül, sondern um eine Angst zu lindern, hier die Fear of Criticism. Niemand will, dass das Date, Kunden oder Kollegen in ein verkrümeltes, schmutziges Auto steigen. Und sie ist nur eine von vielen: um den Lack, ums Geld, sich an der Einfahrt zu blamieren. Niemand spricht sie aus, wer Angst hat, fährt einfach nicht hin oder wäscht selbst.',
+  },
+  {
+    id: 'drei-aengste',
+    label: 'Die Ängste der Kunden',
+    Component: () => <MDreiAengste view="angst" />,
+    notes:
+      'Drei Ängste halten Kunden von der Waschstrasse fern. Das Soziale: Ein schmutziges Auto ist peinlich, was denken die anderen? Das Finanzielle: Kostet das Abo zu viel, lohnt es sich? Und die Zeit: Niemand hat Zeit zum Autowaschen, Zeit ist wertvoller als Geld.',
+  },
+  {
+    id: 'loesung-aengste',
+    label: 'Die Lösung',
+    Component: () => <MDreiAengste view="loesung" />,
+    notes:
+      'OSCAR nimmt alle drei. Mit dem Abo ist das Auto immer vorzeigbar, keine Peinlichkeit mehr. Ein fixer Preis gibt Kostensicherheit, Silber lohnt sich schon ab zwei Wäschen im Monat. Und in acht Minuten ist man durch, die Zeit bleibt beim Kunden.',
   },
   {
     id: 'konkurrenz-versagt',
@@ -76,11 +94,32 @@ export const DECK: DeckSlide[] = [
       'Die Konkurrenz spricht diese Angst nirgends an. Entweder rein transaktionale Plakate mit Rabatt und Punkten, ohne Geschichte und ohne Emotion. Oder eines von zwei Klischees: der Technik-Erklärbär mit Bürsten, Osmose-Wasser und Preistabellen, oder der Auto-Poser mit Zeitlupen-Schaum auf dem schwarzen AMG und Trap-Beats.',
   },
   {
+    id: 'humor',
+    label: 'Marketingstrategie: Humor',
+    Component: MHumor,
+    notes:
+      'Unser Marketing baut auf einem Grundpfeiler auf: Humor. In jedem Witz steckt ein bisschen Wahrheit. Ängste lassen sich am besten in Sketchen verpacken: Man lacht, erkennt sich wieder und merkt sich, wer einen gerettet hat. Jede der drei Ängste bekommt ihren Sketch.',
+  },
+  {
+    id: 'schema',
+    label: 'Das Schema hinter den Geschichten',
+    Component: MStrategie,
+    notes:
+      'Alle drei Geschichten folgen demselben Schema, gebaut wie ein Film. Sie beginnen bei einer Grundangst und bauen Spannung auf. Dann kommt OSCAR ins Bild, mal als Held, mal als Helfer oder Insider, und löst die Spannung. Am Ende steht die Erleichterung, und die bleibt im Kopf.',
+  },
+  {
+    id: 'funnel',
+    label: 'Der Marketing-Funnel',
+    Component: MFunnel,
+    notes:
+      'Jeder Inhalt hat eine Aufgabe. Oben, im ToFu, holen humorvolle Videos und Sketche Reichweite und Aufmerksamkeit. In der Mitte, im MoFu, geben Tipps und Tricks Mehrwert, zum Beispiel richtig saugen. Unten, im BoFu, zeigt cleaner Content die Waschanlage selbst: Er stärkt das Markenimage und baut Vertrauen auf, bis zum Abo.',
+  },
+  {
     id: 'video-konzepte',
     label: 'Video-Konzepte: Serie, Hero, Comedy',
     Component: MVideoKonzepte,
     notes:
-      'Unser Ansatz gilt für alle Standorte. Wir verkaufen 8 Minuten Lebens-Kontrolle und Ruhe: von der Strategie über das Wallet-Abo zu Humor-Videos. Ob Date-Rettung, 8 Minuten Pause im Schaum oder der Samichlaus, der sich auf seiner Tour selbst die Weihnachts-Aktion krallt: Das Abo im Wallet ist immer der Held.',
+      'Unser Ansatz gilt für alle Standorte. Wir haben drei Geschichten gebaut, die alle demselben Schema folgen. Wir verkaufen 8 Minuten Lebens-Kontrolle und Ruhe: von der Strategie über das Wallet-Abo zu Humor-Videos. Ob Date-Rettung, 8 Minuten Pause im Schaum oder der Samichlaus, der sich auf seiner Tour selbst die Weihnachts-Aktion krallt: Das Abo im Wallet ist immer der Held.',
   },
   {
     id: 'skripts',
@@ -90,11 +129,39 @@ export const DECK: DeckSlide[] = [
       'Drei Skripts in der Kurzfassung, oben umschalten. Erstens das Date in letzter Sekunde, die Last-Minute-Rettung. Zweitens das günstigste Spa der Zentralschweiz, die kleine Auszeit im Schaum. Drittens die Weihnachts-Auszeit mit dem Samichlaus und der Geschenkkarte.',
   },
   {
+    id: 'hero-aelpler',
+    label: 'Hero Content: Der Älpler',
+    Component: () => <MHeroFilm idee="aelpler" />,
+    notes:
+      'Neben den Sketchen braucht es Hero Content, einen Imagefilm. Idee eins, der Älpler: Ein Auto fährt durch eine epische, dreckige Alpenlandschaft und wird immer schmutziger. Auf einem Hof warten zwei OSCAR-Mitarbeiter in Älpler-Tracht und waschen es mit Holzeimer, altem Lappen und Naturschwamm, mit grösster Hingabe. Humorvoll, heimatverbunden, ein unerwarteter Kontrast. Rechts die Slogan-Optionen, wir können live wählen.',
+  },
+  {
+    id: 'hero-ursprung',
+    label: 'Hero Content: Der Ursprung',
+    Component: () => <MHeroFilm idee="ursprung" />,
+    notes:
+      'Idee zwei, der Ursprung: eine emotionale Zeitreise. Der kleine Oscar ist schon als Kind fasziniert vom Autowaschen und baut eine winzige Waschstrasse für seine Spielzeugautos. Harter Schnitt in die Gegenwart: Der erwachsene Oscar steht vor der riesigen, modernen Anlage. Dieselbe Hingabe, nur etwas grösser. Emotional, inspirierend, Storytelling mit Herz.',
+  },
+  {
     id: 'drehplan',
     label: 'Drehplan',
     Component: MDrehplan,
     notes:
-      'Pro Konzept ein Drehtag, an einem Drehtag entstehen zwei bis vier Videos. Wir posten zwei Videos pro Woche. Drei Drehtage ergeben also Stoff für drei bis sechs Wochen.',
+      'Pro Konzept ein Drehtag, an einem Drehtag entstehen zwei bis vier Videos. Wir posten zwei Videos pro Woche plus ein paar Posts. Drei Drehtage ergeben also Stoff für drei bis sechs Wochen. Hochwertig, aber handmade: keine aalglatte Fernsehwerbung auf Social Media.',
+  },
+  {
+    id: 'angebot',
+    label: 'Das Angebot: Content-Abo',
+    Component: MAngebot,
+    notes:
+      'Unser Angebot ist ein Content-Abo, so wie Ihr Wasch-Abo: eine monatliche Zahlung für eine feste Content-Lieferung, rund zwei Videos pro Woche plus ein paar Posts. Partnerschaftlich und massgeschneidert auf OSCAR. Preis vor dem Pitch eintragen.',
+  },
+  {
+    id: 'vision',
+    label: 'Thinking out of the Box: die Vision',
+    Component: MVision,
+    notes:
+      'Zum Schluss ein Blick über den Tellerrand: Wie sieht OSCAR in einem Jahr aus? Ein Auftritt im Apple-Marketing-Style, extrem clean, simpel, mit dem besten UX, als neue Premium-App oder Website. Dazu die humorvollen, nahbaren Sketche auf Social Media. Premium im Auftritt, nahbar im Feed.',
   },
   {
     id: 'next-steps',
@@ -108,14 +175,6 @@ export const DECK: DeckSlide[] = [
     label: 'Der Slogan (Schluss)',
     Component: () => <MSlogan cycle={false} />,
     notes: 'Zum Schluss noch einmal die Linie: Make Carwash Feel again. Fragen, oder legen wir den Workshop gleich fest?',
-  },
-  {
-    id: 'problem',
-    label: 'Das Problem: die Ängste',
-    Component: MAengste,
-    appendix: true,
-    notes:
-      'Wer zu Ihnen fährt, nimmt eine Angst mit: um den Lack, ums Geld, sich an der Einfahrt zu blamieren. Niemand spricht sie aus. Wer Angst hat, fragt nicht nach, er fährt einfach nicht hin oder wäscht selbst.',
   },
   {
     id: 'oscar-heute',
@@ -132,14 +191,6 @@ export const DECK: DeckSlide[] = [
     appendix: true,
     notes:
       'Links die Positionierungsmatrix: oben erzählt, unten Grafiken, links steht die Anlage im Mittelpunkt, rechts die Kundschaft. OSCAR steht heute unten links, die Ecke oben rechts ist leer. Der Schalter zeigt, wer sie besetzt: Wartet OSCAR, zieht AVIA / Schätzle ein, sonst OSCAR. Was passiert, wenn OSCAR wartet? AVIA hat in Luzern schon Menschen im Bild, Gewinnspiele und Vereine, es fehlt nur der Erzählbogen. Ein paar Geschichten-Reels, und die Ecke gehört AVIA. Dann wirkt OSCARs Feed wie eine Preisliste, und die Abos aus dem November und Januar gehen für ein Jahr an die Konkurrenz. Jedes davon fehlt mit 450 bis 540 Franken.',
-  },
-  {
-    id: 'strategie',
-    label: 'Die Strategie',
-    Component: MStrategie,
-    appendix: true,
-    notes:
-      'Unsere Strategie ist ein Film. Jeder Mensch hat Grundängste, und jede Marke geht auf eine davon ein. Unser Content erzählt eine Geschichte, die diese Angst aufbaut und dann auflöst. OSCAR spielt darin die Hauptrolle: mal als Held, mal als Helfer oder Insider, aber immer subtil in die Geschichte verpackt. Am Ende steht die Erleichterung, und OSCAR ist die Lösung.',
   },
   {
     id: 'differenzierung',
@@ -188,14 +239,6 @@ export const DECK: DeckSlide[] = [
     appendix: true,
     notes:
       'Happy Car Wash ist der direkte Konkurrent vor Ort, mit Anlagen in Hünenberg und Root. Auf Instagram ist seit November 2020 nichts mehr passiert, das Feld ist leer. Dann in der Leiste zu Autop & Stützliwösch: aktiv, der letzte Reel ist vom 23. Oktober. Der Slogan lautet «Autowäsche ohne Kratzer», sie kennen die Angst also genau. In den Reels taucht er aber nicht auf. Oben wechseln wir zwischen Website und Instagram, beides live. Dieselbe Leiste zeigt auch Migrol, AVIA, Waschman und Soft Car Wash, falls jemand fragt.',
-  },
-  {
-    id: 'funnel',
-    label: 'Tofu Mofu Bofu',
-    Component: MFunnel,
-    appendix: true,
-    notes:
-      'Jeder Inhalt hat eine Aufgabe: oben Aufmerksamkeit, in der Mitte Vertrauen, unten der Abschluss. So wissen wir bei jedem Reel, woran wir es messen. Am Ende zählt das abgeschlossene Abo.',
   },
   {
     id: 'experts',

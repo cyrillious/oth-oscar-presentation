@@ -1,6 +1,6 @@
 {
   "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
-  "name": "Anhang A11 Tofu Mofu Bofu",
+  "name": "08 Marketing-Funnel",
   "component": "./MFunnel.tsx",
   "canvas": {
     "layout": "flow"

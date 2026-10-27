@@ -1,6 +1,6 @@
 {
   "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
-  "name": "10 Nächste Schritte",
+  "name": "11 Nächste Schritte",
   "component": "./MNextSteps.tsx",
   "canvas": {
     "layout": "flow"

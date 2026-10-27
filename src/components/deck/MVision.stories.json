@@ -1,0 +1,28 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "12 Thinking out of the Box",
+  "component": "./MVision.tsx#MVision",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "mockup",
+          "control": "switch",
+          "label": "iPhone-Mockup",
+          "default": true
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}

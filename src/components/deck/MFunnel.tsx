@@ -20,24 +20,24 @@ const STAGES: { key: StageKey; name: string; content: string; kpi: string }[] = 
   {
     key: 'TOFU',
     name: 'Aufmerksamkeit',
-    content: 'Weirding the Normal, Saison-Content',
-    kpi: 'Hook-Rate, Reichweite',
+    content: 'Humorvolle Videos und Sketche, die eine Angst aufnehmen',
+    kpi: 'Reichweite, Hook-Rate',
   },
   {
     key: 'MOFU',
-    name: 'Überlegung',
-    content: 'Only-Beweise, Ängste nehmen, Rechnung gegen «mach ich selbst»',
+    name: 'Mehrwert',
+    content: 'Tipps und Tricks, zum Beispiel richtig saugen',
     kpi: 'Saves, Shares, Profilbesuche',
   },
   {
     key: 'BOFU',
-    name: 'Abschluss',
-    content: 'Unlimited-Angebot im Reel, auf den Bildschirmen vor Ort und auf der Abo-Seite',
+    name: 'Vertrauen',
+    content: 'Cleaner Content: die Waschanlage zeigen, das Markenimage stärken',
     kpi: 'Link-Klicks, Abo-Abschlüsse',
   },
 ]
 
-// Appendix slide on the grid: the figure in a stone panel left of the axis (as on the method
+// Main slide (Janick, slide 7) on the grid: the figure in a stone panel left of the axis (as on the method
 // slides), the stages right of it as a FAQ-style list (border-t, key small mute, name title).
 // The one signal accent is the red lead (FigFunnel): it drops to the open stage and, at BOFU, on into
 // the Abo dish. List and figure drive each other.

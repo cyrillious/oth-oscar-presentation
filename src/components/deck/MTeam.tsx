@@ -7,23 +7,22 @@ export type MTeamProps = {
 const TEAM = [
   { name: 'Timo Haas', role: 'Administration, Foto- & Videograf-Assistenz', photo: '/images/team/timo-haas.webp' },
   { name: 'Severin Leuzinger', role: 'Co-Founder, Producer', photo: '/images/team/severin-leuzinger.webp' },
-  { name: 'Henoch Hounga', role: 'Creative Director', photo: '/images/team/henoch-hounga.webp' },
   { name: 'Janick Brändli', role: 'Founder, Director of Visuals', photo: '/images/team/janick-braendli.webp' },
   { name: 'Cyrill Wipfli', role: 'Design Engineer, Agentic Expert', photo: '/images/team/cyrill-wipfli.webp', zoom: 1.4 },
 ]
 
-/** The last portrait (support) is set off from the core team by a hairline in the gap. Five equal portraits span the full 12 columns (left margin to right margin) and fill the full height of the slide. */
+/** The last portrait (support) is set off from the core team by a hairline in the gap. Four equal portraits span the full 12 columns (left margin to right margin) and fill the full height of the slide. */
 export function MTeam({ chrome = true }: MTeamProps) {
   return (
     <Slide
       n={11}
       kicker="Team"
       title="Ein kleines Team, das alles selbst macht."
-      lead="Nah genug, um schnell zu sein. Breit genug für Konzept, Fotografie, Film und Produktion."
+      lead="Mit eigenem Studio in Rotkreuz direkt vor Ort. Breit genug für Konzept, Fotografie, Film und Produktion."
       chrome={chrome}
     >
       {/* Hover one portrait: the photo zooms in slowly, the others step back (dim + desaturate + shrink). */}
-      <div className="group/team grid min-h-0 flex-1 grid-cols-5 gap-x-5">
+      <div className="group/team grid min-h-0 flex-1 grid-cols-4 gap-x-5">
         {TEAM.map((m, i) => (
           <Portrait key={m.name} {...m} support={i === TEAM.length - 1} />
         ))}

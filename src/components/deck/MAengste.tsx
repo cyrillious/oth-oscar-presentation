@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Slide } from './Slide'
+import { Tag } from './ui'
 
 export type MAengsteProps = {
   /** Tags are thrown in when the slide comes into view. Off shows the settled pile right away. */
@@ -7,9 +8,9 @@ export type MAengsteProps = {
   chrome?: boolean
 }
 
-/** One word per problem a car-wash customer can have. The first one carries the slide's one signal accent. */
+/** One word per problem a car-wash customer can have. The first one, the hidden fear, carries the slide's one signal accent. */
 const WORDS = [
-  'Kratzer', 'Wertverlust', 'Blamage', 'Abzocke', 'Wartezeit', 'Abofalle', 'Streifen', 'Umweltsünde',
+  'Blamage', 'Kratzer', 'Wertverlust', 'Abzocke', 'Wartezeit', 'Abofalle', 'Streifen', 'Umweltsünde',
   'Kontrollverlust', 'Wasserflecken', 'Hitze', 'Regen', 'Vogelkot', 'Staub', 'Teer', 'Felgen', 'Unterboden',
   'Spiegel', 'Dachbox', 'Tieferlegung', 'Verdeck', 'Lackschaden', 'Delle', 'Politur', 'Versiegelung',
   'Tierhaare', 'Kaugummi', 'Hund', 'Fussmatten', 'Geruch', 'Kleingeld', 'Mindestumsatz', 'Kündigung',
@@ -253,53 +254,64 @@ export function MAengste({ fly = true, chrome = true }: MAengsteProps) {
   }, [fly])
 
   return (
-    <Slide
-      n={2}
-      kicker="Das Problem"
-      source="Pip-Karte: Find the Fear"
-      chrome={chrome}
-      // The statement is a word behind the pile, not a title. The sentence stays for screen readers.
-      background={
-        <div className="pointer-events-none absolute inset-0 grid place-items-center overflow-hidden">
-          <h2 className="sr-only">Diese Ängste entscheiden über jedes Abo.</h2>
-          <p aria-hidden="true" className="select-none whitespace-nowrap text-[440px] font-medium leading-none tracking-[-0.05em] text-ink/[0.055]">
-            ÄNGSTE
-          </p>
+    <Slide n={5} kicker="Find the Fear" source="Pip-Karte: Find the Fear" chrome={chrome}>
+      <div className="relative flex-1">
+        {/* «Find the Fear» left of the axis, the hidden fear right of it. The pile lands on top and can be cleared away. */}
+        <div className="grid-12 items-start">
+          <div className="col-span-6">
+            <h2 className="text-balance text-display text-ink">Find the Fear</h2>
+            {/* Rough marker sketch (Higgsfield, styled on Janick's storyboard): the date looks into the crumb-filled car. */}
+            <img
+              src="/images/fear-sketch/date-auto.webp"
+              alt="Skizze: Eine Frau schaut angewidert ins vermüllte Auto, der Fahrer daneben schwitzt vor Scham."
+              width={1400}
+              height={741}
+              className="mt-[16px] w-full max-w-[540px]"
+            />
+          </div>
+          <div className="col-span-6 col-start-7 pl-4 pt-[12px]">
+            <p className="text-body text-mute">Die versteckte Angst</p>
+            <p className="mt-[8px] text-balance text-headline text-ink">Soziale Scham.</p>
+            <p className="mt-[24px] max-w-[42ch] text-pretty text-body text-ink">
+              Menschen kaufen selten aus reinem Vernunftkalkül, sondern um eine Angst zu lindern. Niemand will, dass das Date, Kunden oder Kollegen in ein
+              verkrümeltes, schmutziges Auto steigen.
+            </p>
+            <Tag className="mt-[24px]">Fear of Criticism</Tag>
+          </div>
         </div>
-      }
-    >
-      <div ref={stage} className="relative flex-1">
-        <ul>
-          {WORDS.map((w, i) => (
-            <li
-              key={w}
-              ref={(el) => {
-                tags.current[i] = el
-              }}
-              tabIndex={0}
-              role="button"
-              aria-label={w}
-              onKeyDown={(e) => {
-                if (e.key !== 'Enter' && e.key !== ' ') return
-                e.preventDefault()
-                vanish.current(i)
-              }}
-              className="group invisible absolute left-0 top-0 cursor-grab touch-none select-none rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal active:cursor-grabbing"
-            >
-              {/* Chip: fixed height, the word centred by flex. Everything is 10 % larger than the body step
-                  (22px type, 53 / 44px high). About half are cut larger (taller, wider), the first always. */}
-              <span
-                className={`flex ${i === 0 || rnd(i, 7) < 0.5 ? 'h-[53px] px-[26px]' : 'h-[44px] px-[20px]'} items-center whitespace-nowrap rounded-full border-2 bg-stone text-[22px] leading-[1.35] tracking-[-0.01em] transition-colors duration-300 ease-frame ${
-                  i === 0
-                    ? 'border-signal text-signal group-hover:bg-signal group-hover:text-paper group-focus-visible:bg-signal group-focus-visible:text-paper'
-                    : 'border-ink text-ink group-hover:bg-ink group-hover:text-paper group-focus-visible:bg-ink group-focus-visible:text-paper'
-                }`}
+        <div ref={stage} className="absolute inset-0">
+          <ul>
+            {WORDS.map((w, i) => (
+              <li
+                key={w}
+                ref={(el) => {
+                  tags.current[i] = el
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label={w}
+                onKeyDown={(e) => {
+                  if (e.key !== 'Enter' && e.key !== ' ') return
+                  e.preventDefault()
+                  vanish.current(i)
+                }}
+                className="group invisible absolute left-0 top-0 cursor-grab touch-none select-none rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-signal active:cursor-grabbing"
               >
-                {w}.
-              </span>
-            </li>
-          ))}
-        </ul>
+                {/* Chip: fixed height, the word centred by flex. Everything is 10 % larger than the body step
+                    (22px type, 53 / 44px high). About half are cut larger (taller, wider), the first always. */}
+                <span
+                  className={`flex ${i === 0 || rnd(i, 7) < 0.5 ? 'h-[53px] px-[26px]' : 'h-[44px] px-[20px]'} items-center whitespace-nowrap rounded-full border-2 bg-stone text-[22px] leading-[1.35] tracking-[-0.01em] transition-colors duration-300 ease-frame ${
+                    i === 0
+                      ? 'border-signal text-signal group-hover:bg-signal group-hover:text-paper group-focus-visible:bg-signal group-focus-visible:text-paper'
+                      : 'border-ink text-ink group-hover:bg-ink group-hover:text-paper group-focus-visible:bg-ink group-focus-visible:text-paper'
+                  }`}
+                >
+                  {w}.
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </Slide>
   )

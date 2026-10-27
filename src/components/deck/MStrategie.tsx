@@ -128,7 +128,7 @@ export function MStrategie({ chrome = true }: MStrategieProps) {
   }, [])
 
   return (
-    <Slide n={5} kicker="Die Strategie" source="Strategie: Angst, Story, Relief" chrome={chrome}>
+    <Slide kicker="Das Schema hinter allen drei Geschichten" source="Schema: Angst, Story, OSCAR, Relief" chrome={chrome}>
       <div ref={ref} data-play={play || undefined} className="strat relative mx-auto h-[600px] w-[1440px] shrink-0 overflow-hidden rounded-[12px] bg-stone">
         <Curve />
       </div>

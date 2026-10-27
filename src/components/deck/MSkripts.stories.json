@@ -1,6 +1,6 @@
 {
   "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
-  "name": "08 Skripts",
+  "name": "09 Skripts",
   "component": "./MSkripts.tsx#MSkripts",
   "canvas": {
     "layout": "flow"

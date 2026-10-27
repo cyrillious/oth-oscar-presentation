@@ -1,6 +1,6 @@
 {
   "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
-  "name": "05 Die Strategie (Film-Metapher)",
+  "name": "08 Das Schema (Spannungskurve)",
   "component": "./MStrategie.tsx",
   "canvas": {
     "layout": "flow"

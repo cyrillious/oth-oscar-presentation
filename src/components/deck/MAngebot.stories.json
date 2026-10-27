@@ -1,0 +1,28 @@
+{
+  "$schema": "https://forge.ui8.ai/schemas/stories.v3.json",
+  "name": "11 Das Angebot: Content-Abo",
+  "component": "./MAngebot.tsx#MAngebot",
+  "canvas": {
+    "layout": "flow"
+  },
+  "sections": [
+    {
+      "title": null,
+      "controls": [
+        {
+          "prop": "price",
+          "control": "switch",
+          "label": "Preis-Platzhalter",
+          "default": true
+        },
+        {
+          "prop": "chrome",
+          "control": "switch",
+          "label": "Kopf- und Fusszeile",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "values": {}
+}
