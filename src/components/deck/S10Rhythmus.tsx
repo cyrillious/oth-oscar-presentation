@@ -24,18 +24,18 @@ const LEGEND: { who: Who; label: string }[] = [
 /** Steps of one month. `from` and `to` are in weeks (0–4) on the timeline. */
 const STEPS: { title: string; text: string; who: Who; from: number; to: number }[] = [
   { title: 'Themen und Skripte', text: 'Hooks und Shotlist pro Reel, passend zur Saison.', who: 'wir', from: 0, to: 0.75 },
-  { title: 'Freigabe', text: 'Sie geben die Skripte frei, innert 48 Stunden.', who: 'sie', from: 0.75, to: 1 },
-  { title: 'Drehtag', text: 'Ein Tag im Betrieb: 8–12 Clips plus B-Roll-Bank.', who: 'zusammen', from: 1, to: 1.5 },
-  { title: 'Schnitt', text: 'Ein Dreh, fünf Kanäle, von Instagram bis Abo-Seite.', who: 'wir', from: 1.5, to: 2.6 },
+  { title: 'Freigabe', text: 'Sie geben die Skripte frei.', who: 'sie', from: 0.75, to: 1 },
+  { title: 'Dreh: zwei bis drei Tage', text: 'Im Betrieb, um Videos zu produzieren.', who: 'zusammen', from: 1, to: 1.6 },
+  { title: 'Schnitt', text: 'Alle Kanäle, von Instagram bis zur Abo-Seite.', who: 'wir', from: 1.6, to: 2.6 },
   { title: 'Freigabe', text: 'Sie sehen jedes Reel, bevor es online geht.', who: 'sie', from: 2.6, to: 3 },
-  { title: 'Publizieren und Report', text: 'Posten nach Plan, Report auf einer Seite.', who: 'wir', from: 3, to: 4 },
+  { title: 'Publizieren und Report', text: 'Posten nach Plan, dazu ein kurzer Report.', who: 'wir', from: 3, to: 4 },
 ]
 
 const WEEKS = [1, 2, 3, 4]
 
 export function S10Rhythmus({ legend = true, chrome = true }: S10RhythmusProps) {
   return (
-    <Slide n={6} kicker="So funktioniert es" title="Ein Monat, vier Wochen, ein Drehtag." chrome={chrome}>
+    <Slide n={6} kicker="So funktioniert es" title="So läuft ein Monat." chrome={chrome}>
       <div className="flex min-h-0 flex-1 flex-col">
         {/* Legend left, week labels over the timeline. Weeks sit on the grid columns (240px each). */}
         <div className="grid-12 shrink-0 items-center pb-[14px] text-body">

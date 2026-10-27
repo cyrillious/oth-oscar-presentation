@@ -56,7 +56,7 @@ export function Tag({
     solid: 'bg-signal text-paper',
   }
   return (
-    <span className={`inline-flex h-[28px] shrink-0 items-center whitespace-nowrap rounded-full px-[12px] text-body ${tones[tone]} ${className}`}>
+    <span className={`inline-flex h-[22px] shrink-0 items-center whitespace-nowrap rounded-full px-[10px] text-[16px] leading-none ${tones[tone]} ${className}`}>
       {children}
     </span>
   )
@@ -94,7 +94,7 @@ export function Pill({
       type="button"
       onClick={onClick}
       aria-pressed={dashed ? undefined : selected}
-      className={`relative inline-flex h-[40px] shrink-0 cursor-pointer items-center gap-[8px] whitespace-nowrap rounded-full border px-[18px] text-body transition-[color,background-color,border-color,scale] duration-300 ease-frame motion-safe:active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 ${
+      className={`relative inline-flex h-[32px] shrink-0 cursor-pointer items-center gap-[6px] whitespace-nowrap rounded-full border px-[14px] text-[16px] leading-none transition-[color,background-color,border-color,scale] duration-300 ease-frame motion-safe:active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal focus-visible:ring-offset-2 ${
         selected
           ? `border-ink text-paper ${layoutId ? '' : 'bg-ink'}`
           : dashed
@@ -110,7 +110,7 @@ export function Pill({
           aria-hidden="true"
         />
       )}
-      <span className="relative inline-flex items-center gap-[8px]">{children}</span>
+      <span className="relative inline-flex items-center gap-[6px]">{children}</span>
     </button>
   )
 }

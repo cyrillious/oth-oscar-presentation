@@ -326,15 +326,7 @@ export function Charm({ kind, src, alt, hovered = false, className = '', boxRef,
           transition={kind === 'bubbles' ? { duration: 1.6, repeat: hovered ? Infinity : 0, ease: 'easeInOut' } : { duration: 0.5 }}
           key={kind === 'shield' ? hoverCount : undefined}
         >
-          <motion.img
-            src={src}
-            alt={alt}
-            className="size-full"
-            draggable={false}
-            // The ticket turns once on every hover: a one-off, seen from both sides.
-            animate={kind === 'ticket' ? { rotateY: hoverCount * 360 } : undefined}
-            transition={{ duration: 1.1, ease: [0.14, 0.71, 0.16, 0.99] }}
-          />
+          <img src={src} alt={alt} className="size-full" draggable={false} />
           <Glare src={src} />
           {kind === 'ticket' && (
             // Gloss that runs over the ticket on hover, cut to the shape of the image.
@@ -396,7 +388,6 @@ function KeyBody({ ringW }: { ringW: number }) {
   const w = ringW * 0.42
   const h = (w * 1200) / 364
   useSwing(swing, 'key', {
-    spin: -1.2,
     rest: 0.08,
     pivot: KEY_PIVOT,
     body: { id: 'key', order: 0, px: ringW * 0.15, L: h * 0.5, gap: 70, src: '/images/schluesselbund/key.webp' },
@@ -454,7 +445,8 @@ export function Bund({ charms, boxes, onRelease }: BundProps) {
   const reduce = useReducedMotion()
   const [name, setName] = useState<{ text: string; x: number; y: number } | null>(null)
   const [grabbed, setGrabbed] = useState(false)
-  useSwing(group, 'ring', { spin: reduce ? 0 : 0.6, pivot: { x: 50, y: 2 } })
+  // No start spin: the ring hangs still until the cursor pushes it.
+  useSwing(group, 'ring', { pivot: { x: 50, y: 2 } })
 
   // The whole ring leans a few degrees towards the cursor, for depth.
   useEffect(() => {
@@ -514,8 +506,8 @@ export function Bund({ charms, boxes, onRelease }: BundProps) {
       }}
       onClick={(e) => {
         const d = downAt.current
-        // A click on the bare stage lets go of the ring; a grab or a tap on a unit never does.
-        if (d && !d.onBody && Math.hypot(e.clientX - d.x, e.clientY - d.y) < 6) onRelease()
+        // A tap anywhere on the stage, ring or units lets go of the ring; only a drag (grab and fling) does not.
+        if (d && Math.hypot(e.clientX - d.x, e.clientY - d.y) < 6) onRelease()
       }}
     >
       <Rod />
@@ -551,7 +543,6 @@ export function Bund({ charms, boxes, onRelease }: BundProps) {
                   alt={c.alt}
                   className="w-full"
                   rest={HANG[i].rest}
-                  spin={reduce ? 0 : (i % 2 ? -1 : 1) * (2.4 - i * 0.3)}
                   body={{ id: `unit-${i}`, order: i + 1, px: (HANG[i].x / 100) * RING_W, L: ((HANG[i].w * RING_W) / (677 / 903)) * 0.45, gap: 120, src: c.src }}
                   boxRef={(el) => {
                     boxes.current[i] = el

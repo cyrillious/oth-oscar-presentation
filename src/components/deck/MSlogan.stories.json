@@ -10,30 +10,6 @@
       "title": null,
       "controls": [
         {
-          "prop": "cycle",
-          "control": "switch",
-          "label": "Gefühle durchklicken",
-          "default": true
-        },
-        {
-          "prop": "trailSize",
-          "control": "slider",
-          "label": "Bildhöhe (px)",
-          "min": 180,
-          "max": 460,
-          "step": 10,
-          "default": 300
-        },
-        {
-          "prop": "trailGap",
-          "control": "slider",
-          "label": "Abstand der Bilder (px)",
-          "min": 60,
-          "max": 320,
-          "step": 10,
-          "default": 150
-        },
-        {
           "prop": "chrome",
           "control": "switch",
           "label": "Kopf- und Fusszeile",

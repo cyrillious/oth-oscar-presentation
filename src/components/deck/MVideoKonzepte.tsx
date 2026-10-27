@@ -20,7 +20,7 @@ type Story = { text: string; cx: number; cy: number; lx: number; ly: number; w: 
 
 const STORIES: Story[] = [
   { text: 'Die Date-Rettung', cx: -91, cy: -52.5, lx: -172, ly: -150, w: 170 },
-  { text: '8 Minuten Pause im Schaum', cx: 91, cy: -52.5, lx: 178, ly: -140, w: 140 },
+  { text: '3 Minuten Pause im Schaum', cx: 91, cy: -52.5, lx: 178, ly: -140, w: 140 },
   { text: 'Der Samichlaus krallt sich die Weihnachts-Aktion', cx: 0, cy: 105, lx: 0, ly: 200, w: 220 },
 ]
 
@@ -54,11 +54,11 @@ function handCircle(cx: number, cy: number, r: number, seed: number, overshoot =
 export function MVideoKonzepte({ chrome = true }: MVideoKonzepteProps) {
   const [a, b, c] = STORIES
   return (
-    <Slide title="Standortübergreifende Video-Konzepte: Serie, Hero, Comedy." titleSpan={12} chrome={chrome}>
+    <Slide title="Drei Story-Konzepte für alle Standorte." titleSpan={12} chrome={chrome}>
       <div className="grid-12 min-h-0 flex-1">
         <div className="col-span-5 flex flex-col">
           <p className="text-body text-mute">Der eigentliche Wert</p>
-          <p className="mt-[8px] text-balance text-headline text-ink">«Wir verkaufen 8 Minuten Lebens-Kontrolle und Ruhe.»</p>
+          <p className="mt-[8px] text-balance text-headline text-ink">«Wir verkaufen 3 Minuten Lebens-Kontrolle und Ruhe.»</p>
           <p className="mt-[24px] max-w-[40ch] text-pretty text-body text-mute">
             Drei Geschichten für alle Standorte, alle nach demselben Schema gebaut: Angst, Story, OSCAR, Relief. Sie zeigen
             nicht die Waschanlage, sondern den Alltagsmoment, den sie rettet. Wo sich alle drei überschneiden, steht immer

@@ -28,7 +28,7 @@ export function MHumor({ mapping = true, chrome = true }: MHumorProps) {
         <div className="col-span-6 col-start-7 pl-4">
           <p className="text-balance text-headline text-ink">In jedem Witz steckt ein bisschen Wahrheit.</p>
           <p className="mt-[24px] max-w-[42ch] text-pretty text-body text-mute">
-            Ängste lassen sich am besten in Sketchen verpacken. Man lacht, erkennt sich wieder und merkt sich, wer einen gerettet hat.
+            Ängste verpackt man am besten in Sketche: Man lacht, erkennt sich wieder, und OSCAR bleibt im Kopf.
           </p>
           {mapping && (
             <dl className="mt-[48px] border-b border-ink/10">

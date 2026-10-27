@@ -66,6 +66,7 @@ export function MFunnel({ figur = 'kreise', illustration = true, chrome = true, 
             </div>
           ))}
         <div className="col-span-6 col-start-7 row-start-1 flex min-h-0 flex-col pl-4">
+          <p className="mb-[12px] text-body text-mute">Stufe anklicken</p>
           <div className="border-b border-ink/[0.07]">
             {STAGES.map((s, i) => {
               const isOpen = i === active
@@ -75,7 +76,7 @@ export function MFunnel({ figur = 'kreise', illustration = true, chrome = true, 
                     type="button"
                     aria-expanded={isOpen}
                     onClick={() => setActive(i)}
-                    className="group grid w-full cursor-pointer grid-cols-[104px_1fr_auto] items-center py-[18px] text-left focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-signal"
+                    className="group -mx-[12px] grid w-[calc(100%+24px)] cursor-pointer grid-cols-[92px_1fr_auto] items-center rounded-[8px] px-[12px] py-[18px] text-left transition-colors duration-300 ease-frame hover:bg-ink/[0.04] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-signal"
                   >
                     <span className="text-body text-mute">{s.key}</span>
                     {/* Closed stages step back in mute; the open one comes forward in ink. */}
@@ -84,16 +85,21 @@ export function MFunnel({ figur = 'kreise', illustration = true, chrome = true, 
                     >
                       {s.name}
                     </span>
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
+                    {/* Ringed chevron: a visible control on every row, so the list reads as clickable. Open: ink, turned. */}
+                    <span
                       aria-hidden="true"
-                      className={`text-mute transition-opacity duration-[560ms] ease-[cubic-bezier(0.25,1,0.5,1)] motion-safe:transition-[transform,opacity] ${isOpen ? 'rotate-180 opacity-100' : 'opacity-50 group-hover:opacity-100'}`}
+                      className={`grid size-[36px] place-items-center rounded-full border transition-colors duration-300 ease-frame ${isOpen ? 'border-ink bg-ink text-paper' : 'border-ink/25 text-ink group-hover:border-ink'}`}
                     >
-                      <path d="M3.5 6l4.5 4.5L12.5 6" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        className={`transition-transform duration-[560ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${isOpen ? 'rotate-180' : ''}`}
+                      >
+                        <path d="M3.5 6l4.5 4.5L12.5 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
                   </button>
                   {/* All panels stay mounted; the open and the closing one animate their grid row on the same
                       curve and duration, so the list's total height barely moves while they trade places. */}

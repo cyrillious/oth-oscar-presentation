@@ -273,10 +273,10 @@ export function MAengste({ fly = true, chrome = true }: MAengsteProps) {
             <p className="text-body text-mute">Die versteckte Angst</p>
             <p className="mt-[8px] text-balance text-headline text-ink">Soziale Scham.</p>
             <p className="mt-[24px] max-w-[42ch] text-pretty text-body text-ink">
-              Menschen kaufen selten aus reinem Vernunftkalkül, sondern um eine Angst zu lindern. Niemand will, dass das Date, Kunden oder Kollegen in ein
+              Menschen kaufen selten aus Vernunft, sondern um eine Angst zu lindern. Niemand will, dass Dates, Kunden oder Kollegen in ein
               verkrümeltes, schmutziges Auto steigen.
             </p>
-            <Tag className="mt-[24px]">Fear of Criticism</Tag>
+            <Tag tone="red" className="mt-[24px]">Fear of Criticism</Tag>
           </div>
         </div>
         <div ref={stage} className="absolute inset-0">

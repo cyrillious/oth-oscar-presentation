@@ -1,8 +1,7 @@
 import { Slide } from './Slide'
-import { Ph } from './ui'
 
 export type MAngebotProps = {
-  /** Placeholder for the monthly price under the list. */
+  /** Price range per month under the lead. */
   price?: boolean
   chrome?: boolean
 }
@@ -28,9 +27,10 @@ export function MAngebot({ price = true, chrome = true }: MAngebotProps) {
             Statt einzelner Aufträge eine monatliche Zahlung für eine feste Content-Lieferung.
           </p>
           {price && (
-            <p className="mt-auto text-body text-ink">
-              <Ph>Preis pro Monat</Ph>
-            </p>
+            <p className="mt-auto border-t border-ink/10 pt-[16px] text-body text-mute">Preis pro Monat</p>
+          )}
+          {price && (
+            <p className="mt-[8px] text-headline text-ink tabular-nums">CHF 3’000 bis 7’000</p>
           )}
         </div>
         <div className="col-span-6 col-start-7 self-start pl-4">

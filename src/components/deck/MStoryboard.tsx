@@ -31,7 +31,7 @@ export function MStoryboard({ text = true, chrome = true }: MStoryboardProps) {
             </p>
             <p className="mt-[32px] border-t border-ink/10 pt-[16px] text-body text-mute">Der Twist</p>
             <p className="mt-[12px] text-pretty text-body leading-[1.45] text-ink">
-              Weil OSCAR überall auf der Route liegt, rettet der Wallet-Pass an der nächsten Schranke das Date in 8 Minuten.
+              Weil OSCAR überall auf der Route liegt, rettet der Wallet-Pass an der nächsten Schranke das Date in 3 Minuten.
             </p>
             <p className="mt-[32px] border-l-2 border-signal pl-[16px] text-pretty text-body leading-[1.45] text-ink">«Ich bin einfach ein sehr strukturierter Mensch.»</p>
           </div>

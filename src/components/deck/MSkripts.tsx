@@ -27,8 +27,8 @@ const SCRIPTS: Script[] = [
     short: 'Date',
     kind: 'Konzept 1 · Die Last-Minute-Rettung (Man in a Hole)',
     title: '«Das Date in letzter Sekunde»',
-    hook: 'Eine spontane Nachricht auf dem Handy: «Holst du mich in 10 Minuten ab?», egal ob am Bahnhof Zug, in Emmen oder Sihlbrugg. Du schaust auf den Beifahrersitz und siehst das Chaos: Kaffeeflecken, Gipfeli-Krümel und Hundehaare. Panik bricht aus!',
-    twist: 'Zum Glück liegt OSCAR direkt auf dem Weg. Dank dem Wallet-Pass öffnet sich die Schranke wie von Zauberhand, und der Wagen ist in nur 8 Minuten wieder blitzblank. Dein cooles Fazit zum Date:',
+    hook: 'Eine spontane Nachricht: «Holst du mich in 10 Minuten ab?», ob am Bahnhof Zug, in Emmen oder Sihlbrugg. Ein Blick auf den Beifahrersitz: Kaffeeflecken, Gipfeli-Krümel, Hundehaare. Panik!',
+    twist: 'Zum Glück liegt OSCAR auf dem Weg. Der Wallet-Pass öffnet die Schranke, und in 3 Minuten ist der Wagen blitzblank. Dein cooles Fazit zum Date:',
     line: '«Ich bin einfach ein sehr strukturierter Mensch.»',
     sketch: '/images/skript-sketch/date.webp',
     alt: 'Skizze: Person im Auto hält erschrocken das Handy hoch, auf dem Beifahrersitz Krümel und Hundeknochen.',
@@ -37,8 +37,8 @@ const SCRIPTS: Script[] = [
     short: 'Spa',
     kind: 'Konzept 2 · Die kleine Auszeit (Rolls Royce Moment)',
     title: '«Das günstigste Spa der Zentralschweiz»',
-    hook: 'Warum fahren Abo-Kunden eigentlich dreimal pro Woche zu OSCAR nach Emmen, Zug oder Sihlbrugg? Nicht nur wegen ein bisschen Schmutz, sondern weil es die einzige legale Auszeit vom stressigen Alltag ist!',
-    twist: 'Draussen herrscht Pendler-Stau und E-Mail-Chaos. Drinnen legt sich weisser Schaum sanft über die Scheibe, die Welt draussen wird leise. Dein Moment der Ruhe:',
+    hook: 'Warum fahren Abo-Kunden dreimal pro Woche zu OSCAR nach Emmen, Zug oder Sihlbrugg? Nicht wegen ein bisschen Schmutz, sondern weil es die einzige legale Auszeit vom Alltag ist.',
+    twist: 'Draussen Pendler-Stau und E-Mail-Chaos. Drinnen legt sich weisser Schaum über die Scheibe, die Welt wird leise. Dein Moment der Ruhe:',
     line: '«Das günstigste Spa der Zentralschweiz.»',
     sketch: '/images/skript-sketch/spa.webp',
     alt: 'Skizze: Auto voller Schaumwolken, drinnen döst eine Person mit geschlossenen Augen.',
@@ -47,8 +47,8 @@ const SCRIPTS: Script[] = [
     short: 'Samichlaus',
     kind: 'Konzept 3 · Die Weihnachts-Aktion',
     title: '«Die Weihnachts-Auszeit»',
-    hook: 'Streusalz an der Scheibe, 500 Tannennadeln auf dem Sitz und Geschenke-Stress im Nacken. Warum fährt der Samichlaus in Emmen, Zug und Sihlbrugg plötzlich rechts ran? Weil er auf dem Handy den besten Deal des Jahres entdeckt: die OSCAR Weihnachts-Aktion.',
-    twist: 'Dank dem Apple Wallet fliegt die Schranke sofort auf. Unter dem dichten Schaumteppich kehrt erst mal absolute Stille ein, und er atmet tief durch. Zum Schluss verschwinden die Guetzli-Krümel und Nadeln im Gratis-Sauger. Er steht vor dem spiegelblanken Kombi und zwinkert:',
+    hook: 'Streusalz an der Scheibe, Tannennadeln auf dem Sitz, Geschenke-Stress im Nacken. Warum fährt der Samichlaus in Emmen, Zug und Sihlbrugg plötzlich rechts ran? Auf dem Handy wartet der beste Deal des Jahres: die OSCAR Weihnachts-Aktion.',
+    twist: 'Das Apple Wallet öffnet die Schranke. Unter dem Schaumteppich wird es still, er atmet durch. Guetzli-Krümel und Nadeln verschwinden im Gratis-Sauger. Vor dem spiegelblanken Kombi zwinkert er:',
     line: '«Für dich selbst oder als Geschenkkarte: Man muss auch mal an sich selber denken!»',
     sketch: '/images/skript-sketch/samichlaus.webp',
     alt: 'Skizze: Samichlaus neben glänzendem Auto, zwinkert mit Daumen hoch, daneben ein Geschenk.',
@@ -58,9 +58,9 @@ const SCRIPTS: Script[] = [
 const EASE = [0.14, 0.71, 0.16, 0.99] as const
 
 /**
- * The three scripts in short: pills pick one, a card with its title and a rough marker sketch of the scene left of the axis,
- * hook, twist and closing line right of it.
- * The closing line carries the slide's one signal accent (red rule).
+ * The three scripts in short: pills pick one, its title and a rough marker sketch of the scene left of the axis
+ * (directly on the paper, no panel), hook, twist and closing line right of it.
+ * Signal red: the concept line and the rule on the closing line.
  */
 export function MSkripts({ concept = 1, chrome = true }: MSkriptsProps) {
   const [active, setActive] = useState(concept - 1)
@@ -87,8 +87,8 @@ export function MSkripts({ concept = 1, chrome = true }: MSkriptsProps) {
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: -8, filter: 'blur(4px)' }}
             transition={{ duration: reduce ? 0 : 0.35, ease: EASE }}
           >
-            <article className="col-span-5 flex min-h-0 flex-col overflow-hidden rounded-[12px] bg-stone p-[32px]">
-              <p className="text-pretty text-body text-mute">{s.kind}</p>
+            <article className="col-span-5 flex min-h-0 flex-col overflow-hidden pr-4">
+              <p className="text-pretty text-body text-signal">{s.kind}</p>
               <p className="mt-[8px] text-balance text-headline text-ink">{s.title}</p>
               <div className="flex min-h-0 flex-1 items-end justify-center pt-[24px]">
                 <img src={s.sketch} alt={s.alt} className="max-h-full w-full max-w-[360px] object-contain object-bottom" />

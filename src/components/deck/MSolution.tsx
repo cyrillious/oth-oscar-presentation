@@ -23,7 +23,7 @@ type Product = {
   what: string
   /** How we apply it for OSCAR, three steps. */
   steps: string[]
-  /** Name of the Pip Decks card the method comes from. */
+  /** Name of the Pip Decks card the method comes from (not shown on the slide). */
   card: string
   /** Unit of the OSCAR key ring (public/images/schluesselbund): a motel tag with an OSCAR object. The key ring is shown whole first and stays until a click on the stage or "Bund auflösen" takes it apart into these. */
   charm: string
@@ -339,10 +339,7 @@ export function MSolution({ illustrations = true, columns = '2', chrome = true }
                       ))}
                     </ol>
                     <div className="mt-auto border-t border-ink/10 pt-[20px]">
-                      <p className="flex justify-between gap-[16px] text-body text-mute">
-                        <span>Das Produkt für OSCAR</span>
-                        <span>Pip-Karte: {active.card}</span>
-                      </p>
+                      <p className="text-body text-mute">Das Produkt für OSCAR</p>
                       <p className="mt-[8px] max-w-[30ch] text-pretty text-body text-ink">{active.product}</p>
                     </div>
                   </div>

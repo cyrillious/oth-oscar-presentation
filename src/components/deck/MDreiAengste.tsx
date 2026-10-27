@@ -16,41 +16,41 @@ type Fear = {
 const FEARS: Fear[] = [
   {
     area: 'Das Soziale',
-    angst: { head: '«Was denken die anderen?»', text: 'Ein schmutziges Auto ist peinlich. Vor dem Date, vor Kunden, vor Kollegen.' },
-    loesung: { head: 'Immer vorzeigbar.', text: 'Mit dem Abo ist das Auto jederzeit sauber, auch wenn es spontan wird. Keine Peinlichkeit mehr.' },
+    angst: { head: '«Was denken die anderen?»', text: 'Niemand will, dass Dates, Kunden oder Kollegen in ein verkrümeltes, schmutziges Auto steigen.' },
+    loesung: { head: 'Immer vorzeigbar.', text: 'Mit dem Abo ist das Auto jederzeit sauber, auch wenn es spontan wird. Keine Peinlichkeiten mehr.' },
   },
   {
     area: 'Das Finanzielle',
-    angst: { head: '«Lohnt sich das Abo?»', text: 'Kostet das zu viel? Wer nicht weiss, wie oft er wäscht, rechnet lange hin und her.' },
-    loesung: { head: 'Ein fixer Preis.', text: 'Das Abo gibt Kostensicherheit: ein Betrag pro Monat. Silber lohnt sich schon ab 2 Wäschen.' },
+    angst: { head: '«Lohnt sich das Abo?»', text: 'Wer nicht weiss, wie oft er wäscht, rechnet lange hin und her. Und lässt es am Ende lieber bleiben.' },
+    loesung: { head: 'Ein fixer Preis.', text: 'Ein Betrag pro Monat, fertig gerechnet. Silber lohnt sich schon ab zwei Wäschen.' },
   },
   {
     area: 'Die Zeit',
-    angst: { head: '«Keine Zeit dafür.»', text: 'Autowaschen fällt immer hinten runter. Zeit ist wertvoller als Geld.' },
-    loesung: { head: 'In 8 Minuten durch.', text: 'Rein, durch, weiter. Die Anlage ist schnell, die Zeit bleibt beim Kunden.' },
+    angst: { head: '«Keine Zeit dafür.»', text: 'Keine Zeit heisst meist: keine Motivation. Autowaschen rutscht immer ans Ende der Liste, Zeit ist wertvoller als Geld.' },
+    loesung: { head: 'In 3 Minuten.', text: 'Rein, durch, weiter. Drei Minuten in der Anlage, der Rest des Tages gehört dem Kunden.' },
   },
 ]
 
 /**
  * Janick's slides 4 and 5 on one layout: three cards (col-span-4, 24px gutter), one per fear. The «angst» view
  * names the fear as the customer would say it, the «loesung» view answers it on the same card, so the two slides
- * read as a before/after. The social fear (the hidden one from «Find the Fear») carries the slide's one signal dot.
+ * read as a before/after. All three dots are signal red: OSCAR answers every one of them.
  */
 export function MDreiAengste({ view = 'angst', chrome = true }: MDreiAengsteProps) {
   const solved = view === 'loesung'
   return (
     <Slide
-      title={solved ? 'Die Lösung: OSCAR nimmt alle drei.' : 'Drei Ängste halten Kunden von der Waschstrasse fern.'}
-      lead={solved ? 'Kostensicherheit durch das Abo, Zeitersparnis durch Tempo, keine Peinlichkeit mehr.' : undefined}
+      title={solved ? 'OSCAR spricht alle drei an.' : 'Darum gehen Leute nicht in die Waschstrasse.'}
+      lead={solved ? 'Kostensicherheit durch das Abo, Zeitersparnis durch Tempo, keine Peinlichkeiten mehr.' : undefined}
       chrome={chrome}
     >
       <div className={`${CARDS} grid-12 min-h-0 flex-1 gap-x-[24px] pb-[8px]`}>
-        {FEARS.map((f, i) => {
+        {FEARS.map((f) => {
           const c = solved ? f.loesung : f.angst
           return (
             <div key={f.area} className={`${CARD} col-span-4 flex flex-col justify-between p-[32px]`}>
               <p className={`flex items-center gap-[12px] text-body ${CARD_FAINT}`}>
-                <span className={`size-[14px] rounded-full transition-colors duration-500 ease-frame ${i === 0 ? 'bg-signal' : 'bg-ink/20 group-hover/card:bg-paper/40'}`} />
+                <span className="size-[14px] rounded-full bg-signal" />
                 {f.area}
               </p>
               <div>

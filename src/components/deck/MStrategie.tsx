@@ -6,8 +6,8 @@ export type MStrategieProps = {
 }
 
 // The core concept as a tension curve, like the dramaturgy of a film: it climbs from the fear through the
-// story, drops the moment OSCAR enters and settles in the relief. No slide title, the panel takes the whole
-// body: 1440 × 600 (12 columns of 120px).
+// story, drops the moment OSCAR enters and settles in the relief. No slide title, the curve takes the whole
+// body: 1440 × 600 (12 columns of 120px), directly on the paper, no panel.
 const W = 1440
 const H = 600
 
@@ -19,7 +19,7 @@ const NODE = {
 }
 
 const LINK = {
-  a: 'baut Spannung auf',
+  a: 'baut mit Humor Spannung auf',
   b: 'bringt OSCAR ins Bild',
   c: 'löst die Spannung',
   d: 'bleibt im Kopf',
@@ -129,7 +129,7 @@ export function MStrategie({ chrome = true }: MStrategieProps) {
 
   return (
     <Slide kicker="Das Schema hinter allen drei Geschichten" source="Schema: Angst, Story, OSCAR, Relief" chrome={chrome}>
-      <div ref={ref} data-play={play || undefined} className="strat relative mx-auto h-[600px] w-[1440px] shrink-0 overflow-hidden rounded-[12px] bg-stone">
+      <div ref={ref} data-play={play || undefined} className="strat relative mx-auto h-[600px] w-[1440px] shrink-0 overflow-hidden">
         <Curve />
       </div>
     </Slide>

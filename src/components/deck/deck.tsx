@@ -7,25 +7,21 @@ import { MVideoKonzepte } from './MVideoKonzepte'
 import { MSkripts } from './MSkripts'
 import { MDrehplan } from './MDrehplan'
 import { MAengste } from './MAengste'
-import { MFindTheFear } from './MFindTheFear'
-import { MKonkurrenz } from './MKonkurrenz'
 import { MSolution } from './MSolution'
-import { MKosten } from './MKosten'
 import { MStrategie } from './MStrategie'
-import { MDifferenzierung } from './MDifferenzierung'
-import { MDivider } from './MDivider'
-import { MResultate } from './MResultate'
 import { MTeam } from './MTeam'
 import { MFunnel } from './MFunnel'
 import { MExperts } from './MExperts'
 import { MNextSteps } from './MNextSteps'
-import { S08Hooks } from './S08Hooks'
 import { S10Rhythmus } from './S10Rhythmus'
 import { MDreiAengste } from './MDreiAengste'
 import { MHumor } from './MHumor'
 import { MHeroFilm } from './MHeroFilm'
 import { MAngebot } from './MAngebot'
 import { MVision } from './MVision'
+import { MShortLong } from './MShortLong'
+import { MMarkenauftritt } from './MMarkenauftritt'
+import { MEnde } from './MEnde'
 
 export type DeckSlide = {
   id: string
@@ -49,21 +45,21 @@ export const DECK: DeckSlide[] = [
     label: 'Der Slogan',
     Component: MSlogan,
     notes:
-      'Nach Sexy kommt Premium: rotes Blech, Schaum, Studiolicht, die Waschanlage als Kinoszene. Playful: Limonadenstand, Seifenblasen, Gartenschlauch. Pro Klick wechselt das Gefühl, mit der Maus kommen Bilder dazu. Am Ende steht Feel: Ein Waschgang ist Routine, kein Erlebnis. Wir bringen das Gefühl zurück: Vorfreude beim Einfahren, Erleichterung am Ende. Das ist die Linie für alles, was folgt.',
+      'Make Carwash Sexy again. Ein Waschgang ist heute Routine, kein Erlebnis. Wir bringen das Gefühl zurück: Vorfreude beim Einfahren, Erleichterung am Ende. Das ist die Linie für alles, was folgt.',
   },
   {
     id: 'team',
     label: 'Team',
     Component: MTeam,
     notes:
-      'Das ist oth.view: Janick als Founder und Director of Visuals, Severin als Co-Founder und Producer und Timo in Administration und Assistenz. Mit unserem Studio in Rotkreuz sind wir direkt vor Ort. Bewusst klein, damit wir schnell sind, und breit genug, um Konzept, Foto, Film und Produktion selbst abzudecken.',
+      'Das ist oth.view: Janick als Founder und Director of Visuals, Severin als Co-Founder und Producer, Cyrill als Design Engineer für die digitalen Inhalte. Mit unserem Studio in Rotkreuz sind wir direkt vor Ort. Bewusst klein, damit wir schnell sind, und breit genug, um Konzept, Foto, Film und Produktion selbst abzudecken.',
   },
   {
     id: 'storyboard',
     label: 'Storyboard: Die Beifahrer-Panik',
     Component: MStoryboard,
     notes:
-      'So sieht das aus: eine spontane Nachricht, «Holst du mich in 10 Minuten ab?». Blick auf den Beifahrersitz: Gipfeli-Krümel, Kaffeeflecken, Hundehaare. Weil OSCAR überall auf der Route liegt, öffnet der Wallet-Pass die Schranke, und das Date ist in 8 Minuten gerettet. «Ich bin einfach ein sehr strukturierter Mensch.»',
+      'So sieht das aus: eine spontane Nachricht, «Holst du mich in 10 Minuten ab?». Blick auf den Beifahrersitz: Gipfeli-Krümel, Kaffeeflecken, Hundehaare. Weil OSCAR überall auf der Route liegt, öffnet der Wallet-Pass die Schranke, und das Date ist in 3 Minuten gerettet. «Ich bin einfach ein sehr strukturierter Mensch.»',
   },
   {
     id: 'find-the-fear',
@@ -74,17 +70,17 @@ export const DECK: DeckSlide[] = [
   },
   {
     id: 'drei-aengste',
-    label: 'Die Ängste der Kunden',
+    label: 'Darum gehen Leute nicht in die Waschstrasse',
     Component: () => <MDreiAengste view="angst" />,
     notes:
-      'Drei Ängste halten Kunden von der Waschstrasse fern. Das Soziale: Ein schmutziges Auto ist peinlich, was denken die anderen? Das Finanzielle: Kostet das Abo zu viel, lohnt es sich? Und die Zeit: Niemand hat Zeit zum Autowaschen, Zeit ist wertvoller als Geld.',
+      'Darum gehen Leute nicht in die Waschstrasse. Das Soziale: Niemand will, dass Dates, Kunden oder Kollegen in ein schmutziges Auto steigen, was denken die anderen? Das Finanzielle: Lohnt sich das Abo, wer rechnet, lässt es lieber bleiben. Und die Zeit: Keine Zeit heisst meist keine Motivation, Autowaschen rutscht ans Ende der Liste.',
   },
   {
     id: 'loesung-aengste',
-    label: 'Die Lösung',
+    label: 'OSCAR spricht alle drei an',
     Component: () => <MDreiAengste view="loesung" />,
     notes:
-      'OSCAR nimmt alle drei. Mit dem Abo ist das Auto immer vorzeigbar, keine Peinlichkeit mehr. Ein fixer Preis gibt Kostensicherheit, Silber lohnt sich schon ab zwei Wäschen im Monat. Und in acht Minuten ist man durch, die Zeit bleibt beim Kunden.',
+      'OSCAR spricht alle drei an. Mit dem Abo ist das Auto immer vorzeigbar, keine Peinlichkeiten mehr. Ein fixer Preis gibt Kostensicherheit, Silber lohnt sich schon ab zwei Wäschen im Monat. Und in drei Minuten ist man durch, der Rest des Tages gehört dem Kunden.',
   },
   {
     id: 'konkurrenz-versagt',
@@ -98,14 +94,21 @@ export const DECK: DeckSlide[] = [
     label: 'Marketingstrategie: Humor',
     Component: MHumor,
     notes:
-      'Unser Marketing baut auf einem Grundpfeiler auf: Humor. In jedem Witz steckt ein bisschen Wahrheit. Ängste lassen sich am besten in Sketchen verpacken: Man lacht, erkennt sich wieder und merkt sich, wer einen gerettet hat. Jede der drei Ängste bekommt ihren Sketch.',
+      'Unser Marketing baut auf einem Grundpfeiler auf: Humor. In jedem Witz steckt ein bisschen Wahrheit. Ängste verpackt man am besten in Sketche: Man lacht, erkennt sich wieder, und OSCAR bleibt im Kopf. Jede der drei Ängste bekommt ihren Sketch.',
+  },
+  {
+    id: 'markenauftritt',
+    label: 'Markenauftritt: Video, Foto, Web',
+    Component: MMarkenauftritt,
+    notes:
+      'Die Sketche holen die Aufmerksamkeit, die Marke braucht auch den Rest. Für den Markenauftritt produzieren wir Video- und Fotocontent: Imagefilm, Anlage, Team, Standorte. Und wir bauen den Webauftritt, auf dem alles zusammenkommt. Alles aus einer Hand, alles in einer Linie.',
   },
   {
     id: 'schema',
     label: 'Das Schema hinter den Geschichten',
     Component: MStrategie,
     notes:
-      'Alle drei Geschichten folgen demselben Schema, gebaut wie ein Film. Sie beginnen bei einer Grundangst und bauen Spannung auf. Dann kommt OSCAR ins Bild, mal als Held, mal als Helfer oder Insider, und löst die Spannung. Am Ende steht die Erleichterung, und die bleibt im Kopf.',
+      'Alle drei Geschichten folgen demselben Schema, gebaut wie ein Film. Sie beginnen bei einer Grundangst und bauen mit Humor Spannung auf. Dann kommt OSCAR ins Bild, mal als Held, mal als Helfer oder Insider, und löst die Spannung. Am Ende steht die Erleichterung, und die bleibt im Kopf.',
   },
   {
     id: 'funnel',
@@ -116,10 +119,10 @@ export const DECK: DeckSlide[] = [
   },
   {
     id: 'video-konzepte',
-    label: 'Video-Konzepte: Serie, Hero, Comedy',
+    label: 'Drei Story-Konzepte für alle Standorte',
     Component: MVideoKonzepte,
     notes:
-      'Unser Ansatz gilt für alle Standorte. Wir haben drei Geschichten gebaut, die alle demselben Schema folgen. Wir verkaufen 8 Minuten Lebens-Kontrolle und Ruhe: von der Strategie über das Wallet-Abo zu Humor-Videos. Ob Date-Rettung, 8 Minuten Pause im Schaum oder der Samichlaus, der sich auf seiner Tour selbst die Weihnachts-Aktion krallt: Das Abo im Wallet ist immer der Held.',
+      'Unser Ansatz gilt für alle Standorte. Wir haben drei Geschichten gebaut, die alle demselben Schema folgen. Wir verkaufen 3 Minuten Lebens-Kontrolle und Ruhe, so lange dauert ein Waschgang: von der Strategie über das Wallet-Abo zu Humor-Videos. Ob Date-Rettung, 3 Minuten Pause im Schaum oder der Samichlaus, der sich auf seiner Tour selbst die Weihnachts-Aktion krallt: Das Abo im Wallet ist immer der Held.',
   },
   {
     id: 'skripts',
@@ -127,6 +130,13 @@ export const DECK: DeckSlide[] = [
     Component: MSkripts,
     notes:
       'Drei Skripts in der Kurzfassung, oben umschalten. Erstens das Date in letzter Sekunde, die Last-Minute-Rettung. Zweitens das günstigste Spa der Zentralschweiz, die kleine Auszeit im Schaum. Drittens die Weihnachts-Auszeit mit dem Samichlaus und der Geschenkkarte.',
+  },
+  {
+    id: 'short-long',
+    label: 'Übergang: Short Form, Long Form',
+    Component: MShortLong,
+    notes:
+      'Bis hier Short Form: Sketche von 15 bis 60 Sekunden, zwei pro Woche, sie holen Aufmerksamkeit. Ab hier Long Form: der Imagefilm. Er verkauft nicht direkt, er baut Vertrauen auf. Wer OSCAR eine ganze Geschichte lang zuschaut, glaubt der Marke, und wer der Marke glaubt, löst das Abo.',
   },
   {
     id: 'hero-aelpler',
@@ -144,7 +154,7 @@ export const DECK: DeckSlide[] = [
   },
   {
     id: 'drehplan',
-    label: 'Drehplan',
+    label: 'Shorts Drehplan',
     Component: MDrehplan,
     notes:
       'Pro Konzept ein Drehtag, an einem Drehtag entstehen zwei bis vier Videos. Wir posten zwei Videos pro Woche plus ein paar Posts. Drei Drehtage ergeben also Stoff für drei bis sechs Wochen. Hochwertig, aber handmade: keine aalglatte Fernsehwerbung auf Social Media.',
@@ -154,14 +164,14 @@ export const DECK: DeckSlide[] = [
     label: 'Das Angebot: Content-Abo',
     Component: MAngebot,
     notes:
-      'Unser Angebot ist ein Content-Abo, so wie Ihr Wasch-Abo: eine monatliche Zahlung für eine feste Content-Lieferung, rund zwei Videos pro Woche plus ein paar Posts. Partnerschaftlich und massgeschneidert auf OSCAR. Preis vor dem Pitch eintragen.',
+      'Unser Angebot ist ein Content-Abo, so wie Ihr Wasch-Abo: eine monatliche Zahlung für eine feste Content-Lieferung, rund zwei Videos pro Woche plus ein paar Posts. Partnerschaftlich und massgeschneidert auf OSCAR. Je nach Umfang zwischen 3’000 und 7’000 Franken im Monat.',
   },
   {
     id: 'vision',
-    label: 'Thinking out of the Box: die Vision',
+    label: 'Das liefern wir',
     Component: MVision,
     notes:
-      'Zum Schluss ein Blick über den Tellerrand: Wie sieht OSCAR in einem Jahr aus? Ein Auftritt im Apple-Marketing-Style, extrem clean, simpel, mit dem besten UX, als neue Premium-App oder Website. Dazu die humorvollen, nahbaren Sketche auf Social Media. Premium im Auftritt, nahbar im Feed.',
+      'Das liefern wir: Customer Experience in allen Aspekten mitgedacht. Die UX-Massnahmen dazu sind die OSCAR Carwash App und ein Dashboard für die ganze Customer Journey. Die Wechselwirkung: Der Auftritt, App, Website, Dashboard, zeigt Seriosität. Die Videos sind nahbar und zeigen Oscar authentisch und persönlich. Das eine macht die Videos glaubwürdig, das andere macht die Marke nahbar.',
   },
   {
     id: 'next-steps',
@@ -173,32 +183,14 @@ export const DECK: DeckSlide[] = [
   {
     id: 'slogan-ende',
     label: 'Der Slogan (Schluss)',
-    Component: () => <MSlogan cycle={false} />,
-    notes: 'Zum Schluss noch einmal die Linie: Make Carwash Feel again. Fragen, oder legen wir den Workshop gleich fest?',
+    Component: MSlogan,
+    notes: 'Zum Schluss noch einmal die Linie: Make Carwash Sexy again.',
   },
   {
-    id: 'oscar-heute',
-    label: 'Das Problem: OSCAR heute',
-    Component: MFindTheFear,
-    appendix: true,
-    notes:
-      'Beim Preis ist OSCAR klar, das ist Ihre Stärke. Zu Kratzern und Warten steht etwas auf der Webseite, auf Social Media nicht. Zu Sauberkeit und Umwelt sagt OSCAR heute nichts. Die Konkurrenz ist nicht besser: Von 24 Posts nimmt genau einer eine Angst auf. Das Feld ist offen.',
-  },
-  {
-    id: 'kosten',
-    label: 'Kosten des Nichtstuns',
-    Component: MKosten,
-    appendix: true,
-    notes:
-      'Links die Positionierungsmatrix: oben erzählt, unten Grafiken, links steht die Anlage im Mittelpunkt, rechts die Kundschaft. OSCAR steht heute unten links, die Ecke oben rechts ist leer. Der Schalter zeigt, wer sie besetzt: Wartet OSCAR, zieht AVIA / Schätzle ein, sonst OSCAR. Was passiert, wenn OSCAR wartet? AVIA hat in Luzern schon Menschen im Bild, Gewinnspiele und Vereine, es fehlt nur der Erzählbogen. Ein paar Geschichten-Reels, und die Ecke gehört AVIA. Dann wirkt OSCARs Feed wie eine Preisliste, und die Abos aus dem November und Januar gehen für ein Jahr an die Konkurrenz. Jedes davon fehlt mit 450 bis 540 Franken.',
-  },
-  {
-    id: 'differenzierung',
-    label: 'Unsere Differenzierung',
-    Component: MDifferenzierung,
-    appendix: true,
-    notes:
-      'Unser Kern: OSCAR beantwortet die Ängste offen, als Einzige in der Region. In drei Schritten: die Angst nennen, mit Bildern beweisen, im selben Moment zum Abo führen. Jeder Schritt unterstützt den Abschluss, nicht nur die Reichweite.',
+    id: 'ende',
+    label: 'Let’s create something.',
+    Component: MEnde,
+    notes: 'Let’s create something. Fragen, oder legen wir den Workshop gleich fest?',
   },
   {
     id: 'loesung',
@@ -214,31 +206,7 @@ export const DECK: DeckSlide[] = [
     Component: S10Rhythmus,
     appendix: true,
     notes:
-      'Jeder Monat läuft gleich: Skripte, ein Drehtag, Schnitt, Publizieren mit Report. Aus einem Drehtag entstehen Versionen für Instagram, TikTok, Shorts, die Bildschirme vor Ort und die Abo-Seite. Für Sie heisst das: ein Drehtag im Betrieb und zwei Freigaben pro Monat. Den Rest machen wir.',
-  },
-  {
-    id: 'resultate',
-    label: 'Resultate',
-    Component: MResultate,
-    appendix: true,
-    notes:
-      'Die Rechnung ist einfach: Der Pilot kostet einen festen Betrag, ein Abo bringt 450 bis 540 Franken im Jahr. Dividiert ergibt das die Abos bis Break-even. Vor dem Pitch die Investition eintragen. Gemessen wird an den Abo-Abschlüssen, zugeordnet über UTM im Shop, mit einem Report pro Monat auf einer Seite.',
-  },
-  {
-    id: 'uebergang-konkurrenz',
-    label: 'Übergang: Konkurrenz',
-    Component: () => <MDivider title="Was macht die Konkurrenz?" lead="Zwei Waschanlagen aus der Region, live auf ihren Kanälen." />,
-    appendix: true,
-    notes:
-      'Bevor wir zeigen, was wir anders machen, ein Blick auf die Konkurrenz: Was machen Happy Car Wash und Autop auf Instagram, und was lassen sie liegen?',
-  },
-  {
-    id: 'konkurrenz',
-    label: 'Konkurrenz: Happy Car Wash & Autop',
-    Component: () => <MKonkurrenz competitor="happy" />,
-    appendix: true,
-    notes:
-      'Happy Car Wash ist der direkte Konkurrent vor Ort, mit Anlagen in Hünenberg und Root. Auf Instagram ist seit November 2020 nichts mehr passiert, das Feld ist leer. Dann in der Leiste zu Autop & Stützliwösch: aktiv, der letzte Reel ist vom 23. Oktober. Der Slogan lautet «Autowäsche ohne Kratzer», sie kennen die Angst also genau. In den Reels taucht er aber nicht auf. Oben wechseln wir zwischen Website und Instagram, beides live. Dieselbe Leiste zeigt auch Migrol, AVIA, Waschman und Soft Car Wash, falls jemand fragt.',
+      'Jeder Monat läuft gleich: Skripte, Dreh, Schnitt, Publizieren mit Report. Aus dem Dreh entstehen Versionen für alle Kanäle, von Instagram bis zur Abo-Seite. Für Sie heisst das: zwei bis drei Tage im Betrieb, um Videos zu produzieren, und zwei Freigaben pro Monat. Den Rest machen wir.',
   },
   {
     id: 'experts',
@@ -247,14 +215,6 @@ export const DECK: DeckSlide[] = [
     appendix: true,
     notes:
       'Hier zählt mein Einsatz: Cyrill Wipfli, Experte für digitale Inhalte. Das Mockup zeigt die Abo-Seite von OSCAR Unlimited auf dem Handy: das Bezahlen, mit dem Jahresabo zuoberst und zwei Monaten geschenkt.',
-  },
-  {
-    id: 'hooks',
-    label: 'Ideen: Hook-Bank',
-    Component: S08Hooks,
-    appendix: true,
-    notes:
-      'Die ersten zwei Sekunden entscheiden, ob jemand weiterschaut. Darum testen wir fünf Hook-Typen gegeneinander und behalten, was die beste Hook-Rate bringt. Die Rechnung mit 2 Wäschen gilt für Silber und das Jahresabo, das sagen wir auch so.',
   },
 ]
 

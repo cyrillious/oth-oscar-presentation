@@ -49,8 +49,8 @@ const IDEAS: Record<HeroIdee, Idea> = {
 
 /**
  * Hero content, one image film idea per slide. Left of the axis: the film's name and a marker sketch of it.
- * Right of it: what we see, the vibe, and three slogan options to pick from. The picked slogan is the slide's
- * one signal accent (red bar), so the room can choose live.
+ * Right of it: what we see, the vibe, and three slogan options to pick from. The film's name is in signal red,
+ * the picked slogan carries a red bar, so the room can choose live.
  */
 export function MHeroFilm({ idee = 'aelpler', slogan = 0, sketch = true, chrome = true }: MHeroFilmProps) {
   const idea = IDEAS[idee]
@@ -62,7 +62,7 @@ export function MHeroFilm({ idee = 'aelpler', slogan = 0, sketch = true, chrome 
       <div className="grid-12 min-h-0 flex-1 pt-[40px]">
         <div className="col-span-6 flex min-h-0 flex-col pr-4">
           <p className="text-body text-mute">Hero Content · Imagefilm {idea.nr}</p>
-          <h2 className="mt-[16px] text-balance text-display text-ink">{idea.name}</h2>
+          <h2 className="mt-[16px] text-balance text-display text-signal">{idea.name}</h2>
           {sketch && (
             <img
               src={idea.sketch}
